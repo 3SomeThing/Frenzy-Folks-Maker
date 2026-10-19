@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class MainMenuLoader : MonoBehaviour
+public class MainMenuLoaderVR : MonoBehaviour
 {
     private void Awake()
     {
