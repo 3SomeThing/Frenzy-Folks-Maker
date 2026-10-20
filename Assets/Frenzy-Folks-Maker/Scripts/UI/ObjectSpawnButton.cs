@@ -8,6 +8,13 @@ using UnityEngine.XR.Interaction.Toolkit.UI;
 public class ObjectButton : MonoBehaviour, IPointerDownHandler
 {
     [SerializeField] XRGrabInteractable prefab;
+    private AudioSource _spawnAudioSource;
+
+
+    private void Awake()
+    {
+        _spawnAudioSource = GetComponent<AudioSource>();
+    }
 
     public void OnPointerDown(PointerEventData eventData)
     {
@@ -16,6 +23,7 @@ public class ObjectButton : MonoBehaviour, IPointerDownHandler
             return;
 
         Vector3 hitPoint = eventData.pointerCurrentRaycast.worldPosition;
+        _spawnAudioSource.Play();
 
         XRGrabInteractable spawned = Instantiate(prefab, hitPoint, prefab.gameObject.transform.rotation, GetParentLevel().transform);
         interactor.interactionManager.SelectEnter(interactor, (IXRSelectInteractable)spawned);
