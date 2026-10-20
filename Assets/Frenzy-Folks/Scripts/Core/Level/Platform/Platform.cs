@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UIElements;
 
 [RequireComponent(typeof(Rigidbody))]
-public class Platform : NetworkBehaviour
+public class Platform : MonoBehaviour
 {
     [SerializeField] public bool makePlatformFall = false;
     [SerializeField] public float delayBeforeFalling = 2f;
@@ -29,7 +29,7 @@ public class Platform : NetworkBehaviour
 
 
     // Server (or offline) drives the movement, clients only observe it
-    private bool HasAuthority => !IsSpawned || IsServer;
+    private bool HasAuthority => false;
 
     private void Awake()
     {
