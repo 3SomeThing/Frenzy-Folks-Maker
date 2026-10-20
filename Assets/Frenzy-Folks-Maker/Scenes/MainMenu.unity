@@ -742,6 +742,11 @@ MonoBehaviour:
   m_Teleporting:
     m_PersistentCalls:
       m_Calls: []
+--- !u!1 &1068285192 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2067705157902079216, guid: 82752a3ac71bae04fbdd7ace886f8263, type: 3}
+  m_PrefabInstance: {fileID: 4140638013218095571}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1202963108
 GameObject:
   m_ObjectHideFlags: 0
@@ -1023,6 +1028,7 @@ GameObject:
   - component: {fileID: 1529595159}
   - component: {fileID: 1529595158}
   - component: {fileID: 1529595157}
+  - component: {fileID: 1529595160}
   m_Layer: 0
   m_Name: EventSystem
   m_TagString: Untagged
@@ -1101,6 +1107,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1529595160
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1529595155}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c516db79ccf4d16a7a91ad423a8ee1a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DontDestroyOnLoad
 --- !u!1 &1920097967
 GameObject:
   m_ObjectHideFlags: 0
@@ -1300,7 +1318,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 421229712030410514, guid: 82752a3ac71bae04fbdd7ace886f8263, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 583820768687642810, guid: 82752a3ac71bae04fbdd7ace886f8263, type: 3}
       propertyPath: m_AnchorMax.y
@@ -1325,6 +1343,18 @@ PrefabInstance:
     - target: {fileID: 583820768687642810, guid: 82752a3ac71bae04fbdd7ace886f8263, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1613479484208124842, guid: 82752a3ac71bae04fbdd7ace886f8263, type: 3}
+      propertyPath: m_CastDistance
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 1613479484208124842, guid: 82752a3ac71bae04fbdd7ace886f8263, type: 3}
+      propertyPath: m_HitDetectionType
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1613479484208124842, guid: 82752a3ac71bae04fbdd7ace886f8263, type: 3}
+      propertyPath: m_SphereCastRadius
+      value: 0.25
       objectReference: {fileID: 0}
     - target: {fileID: 1857572508113810133, guid: 82752a3ac71bae04fbdd7ace886f8263, type: 3}
       propertyPath: m_Vertical
@@ -1360,7 +1390,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2067705157902079216, guid: 82752a3ac71bae04fbdd7ace886f8263, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2507125984199496942, guid: 82752a3ac71bae04fbdd7ace886f8263, type: 3}
       propertyPath: m_AnchorMax.y
@@ -1470,6 +1500,10 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 670092004}
+    - target: {fileID: 5176795386082742807, guid: 82752a3ac71bae04fbdd7ace886f8263, type: 3}
+      propertyPath: objectToToggle
+      value: 
+      objectReference: {fileID: 1068285192}
     - target: {fileID: 5814099336769312303, guid: 82752a3ac71bae04fbdd7ace886f8263, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -1597,6 +1631,18 @@ PrefabInstance:
     - target: {fileID: 7917716814648080206, guid: 82752a3ac71bae04fbdd7ace886f8263, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8607710066197925173, guid: 82752a3ac71bae04fbdd7ace886f8263, type: 3}
+      propertyPath: m_CastDistance
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 8607710066197925173, guid: 82752a3ac71bae04fbdd7ace886f8263, type: 3}
+      propertyPath: m_HitDetectionType
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8607710066197925173, guid: 82752a3ac71bae04fbdd7ace886f8263, type: 3}
+      propertyPath: m_SphereCastRadius
+      value: 0.25
       objectReference: {fileID: 0}
     - target: {fileID: 8974140617525358267, guid: 82752a3ac71bae04fbdd7ace886f8263, type: 3}
       propertyPath: m_AnchorMax.y
