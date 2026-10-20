@@ -17,7 +17,7 @@ public class ObjectButton : MonoBehaviour, IPointerDownHandler
 
         Vector3 hitPoint = eventData.pointerCurrentRaycast.worldPosition;
 
-        XRGrabInteractable spawned = Instantiate(prefab, hitPoint, Quaternion.identity, GetParentLevel().transform);
+        XRGrabInteractable spawned = Instantiate(prefab, hitPoint, prefab.gameObject.transform.rotation, GetParentLevel().transform);
         interactor.interactionManager.SelectEnter(interactor, (IXRSelectInteractable)spawned);
     }
 

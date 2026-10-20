@@ -146,7 +146,7 @@ PrefabInstance:
     - target: {fileID: 5475656441689545986, guid: de8e3441c04bfd045bd0f73e5512dfb6, type: 3}
       propertyPath: prefab
       value: 
-      objectReference: {fileID: -793147474586264062, guid: a1507cd1dac7b0f48965da7d1d87daf3, type: 3}
+      objectReference: {fileID: 7157778655382271295, guid: a1507cd1dac7b0f48965da7d1d87daf3, type: 3}
     - target: {fileID: 7698371997449683564, guid: de8e3441c04bfd045bd0f73e5512dfb6, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -1352,7 +1352,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8590845238605256711, guid: de8e3441c04bfd045bd0f73e5512dfb6, type: 3}
       propertyPath: m_text
-      value: Checkpoint
+      value: big pink building
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
