@@ -96,7 +96,10 @@ PrefabInstance:
       addedObject: {fileID: -2400888767637461573}
     - targetCorrespondingSourceObject: {fileID: 6525973169812466031, guid: a65279c4fad7ab448813d9e259e9a3b9, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 3638574999011861473}
+      addedObject: {fileID: -1617682023636904463}
+    - targetCorrespondingSourceObject: {fileID: 6525973169812466031, guid: a65279c4fad7ab448813d9e259e9a3b9, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: -7595892259896914049}
   m_SourcePrefab: {fileID: 100100000, guid: a65279c4fad7ab448813d9e259e9a3b9, type: 3}
 --- !u!1 &3892407871355116576 stripped
 GameObject:
@@ -143,7 +146,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &3638574999011861473
+--- !u!114 &-1617682023636904463
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -152,9 +155,32 @@ MonoBehaviour:
   m_GameObject: {fileID: 3892407871355116576}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0ad34abafad169848a38072baa96cdb2, type: 3}
+  m_Script: {fileID: 11500000, guid: d0a1302d0d134fa8a2a5b3bf4aec3c20, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Unity.XR.Interaction.Toolkit::UnityEngine.XR.Interaction.Toolkit.Interactables.XRGrabInteractable
+  m_EditorClassIdentifier: Unity.XR.Interaction.Toolkit::UnityEngine.XR.Interaction.Toolkit.Transformers.XRGeneralGrabTransformer
+  m_PermittedDisplacementAxes: -1
+  m_ConstrainedAxisDisplacementMode: 1
+  m_TwoHandedRotationMode: 1
+  m_AllowOneHandedScaling: 1
+  m_AllowTwoHandedScaling: 0
+  m_OneHandedScaleSpeed: 0.5
+  m_ThresholdMoveRatioForScale: 0.05
+  m_ClampScaling: 1
+  m_MinimumScaleRatio: 0.25
+  m_MaximumScaleRatio: 2
+  m_ScaleMultiplier: 0.25
+--- !u!114 &-7595892259896914049
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3892407871355116576}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 561cc57c3e9c94b419eb0bae14eda9ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MovableLevelElement
   m_InteractionManager: {fileID: 0}
   m_Colliders: []
   m_InteractionLayers:
@@ -235,11 +261,11 @@ MonoBehaviour:
   m_SmoothPosition: 0
   m_SmoothPositionAmount: 8
   m_TightenPosition: 0.1
-  m_TrackRotation: 1
+  m_TrackRotation: 0
   m_SmoothRotation: 0
   m_SmoothRotationAmount: 8
   m_TightenRotation: 0.1
-  m_TrackScale: 1
+  m_TrackScale: 0
   m_SmoothScale: 0
   m_SmoothScaleAmount: 8
   m_TightenScale: 0.1
@@ -273,3 +299,39 @@ MonoBehaviour:
   m_LimitAngularVelocity: 0
   m_MaxLinearVelocityDelta: 10
   m_MaxAngularVelocityDelta: 20
+  leftJoystickAction:
+    m_Name: Left Joystick
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: 43451d77-7ba7-4c81-95d3-8e72096913e2
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: f7d62bb2-7fed-4c64-b3c0-d5a4c88dce60
+      m_Path: <XRController>{LeftHand}/primary2DAxis
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Left Joystick
+      m_Flags: 0
+    m_Flags: 0
+    m_Priority: 0
+  rightJoystickAction:
+    m_Name: Right Joystick
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: dc7e48d7-898f-497d-8ff6-8d41af98a7d6
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: 371350e2-b10a-452a-b223-584338f1af19
+      m_Path: <XRController>{RightHand}/primary2DAxis
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Right Joystick
+      m_Flags: 0
+    m_Flags: 0
+    m_Priority: 0

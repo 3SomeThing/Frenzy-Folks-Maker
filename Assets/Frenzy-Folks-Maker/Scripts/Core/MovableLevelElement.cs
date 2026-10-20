@@ -24,13 +24,13 @@ public class MovableLevelElement : XRGrabInteractable
     {
         base.OnEnable();
 
-        leftJoystickAction.Enable();
+        // leftJoystickAction.Enable();
         rightJoystickAction.Enable();
     }
 
     protected override void OnDisable()
     {
-        leftJoystickAction.Disable();
+        // leftJoystickAction.Disable();
         rightJoystickAction.Disable();
 
         base.OnDisable();

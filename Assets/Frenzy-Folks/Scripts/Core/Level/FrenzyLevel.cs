@@ -50,9 +50,6 @@ public class FrenzyLevel : NetworkBehaviour
 
     private void Update()
     {
-        if (!IsServer)
-            return;
-
         if (_inputActionSave.WasPressedThisFrame())
         {
             SaveLevelConfiguration();

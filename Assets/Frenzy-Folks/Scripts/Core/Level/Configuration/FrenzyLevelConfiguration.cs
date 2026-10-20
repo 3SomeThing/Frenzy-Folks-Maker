@@ -39,6 +39,34 @@ public class FrenzyLevelConfiguration
         {
             "turret_trap",
             () => new TurretTrapConfiguration()
+        },
+        {
+            "start_platform",
+            () => new StartPlatformConfiguration()
+        },
+        {
+            "end_platform",
+            () => new EndPlatformConfiguration()
+        },
+        {
+            "big_pink_building",
+            () => new BuildingConfiguration()
+        },
+        {
+            "medium_pink_building",
+            () => new BuildingConfiguration()
+        },
+        {
+            "medium_white_building",
+            () => new BuildingConfiguration()
+        },
+        {
+            "small_blue_building",
+            () => new BuildingConfiguration()
+        },
+        {
+            "small_white_building",
+            () => new BuildingConfiguration()
         }
     };
     
@@ -110,9 +138,9 @@ public class FrenzyLevelConfiguration
         GameObject instance = Object.Instantiate(prefab, _parentLevel.transform, true);
         ((T)entry.value).Apply(instance);
 
-        NetworkObject networkObject = instance.GetComponent<NetworkObject>();
-        networkObject.Spawn(true);
-        networkObject.TrySetParent(_parentLevel.transform);
+        // NetworkObject networkObject = instance.GetComponent<NetworkObject>();
+        // networkObject.Spawn(true);
+        // networkObject.TrySetParent(_parentLevel.transform);
     }
 
     public void Load(string json)

@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.XR.Interaction.Toolkit.Interactables;
@@ -16,7 +17,17 @@ public class ObjectButton : MonoBehaviour, IPointerDownHandler
 
         Vector3 hitPoint = eventData.pointerCurrentRaycast.worldPosition;
 
-        var spawned = Instantiate(prefab, hitPoint, interactor.transform.rotation);
+        XRGrabInteractable spawned = Instantiate(prefab, hitPoint, Quaternion.identity, GetParentLevel().transform);
         interactor.interactionManager.SelectEnter(interactor, (IXRSelectInteractable)spawned);
+    }
+
+    public static GameObject GetParentLevel()
+    {
+        GameObject parentLevel = GameObject.Find("Level");
+        if (parentLevel == null)
+        {
+            throw new Exception("Parent level object not found. Please ensure there is a GameObject named 'Level' in the scene.");
+        }
+        return parentLevel;
     }
 }

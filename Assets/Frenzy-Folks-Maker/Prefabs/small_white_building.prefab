@@ -16,6 +16,10 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2862465261611961274, guid: aeae88d7f4f51cf4c8b59b1a9c34e183, type: 3}
+      propertyPath: m_Convex
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5446663022671203526, guid: aeae88d7f4f51cf4c8b59b1a9c34e183, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.5
@@ -34,11 +38,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5446663022671203526, guid: aeae88d7f4f51cf4c8b59b1a9c34e183, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 35
       objectReference: {fileID: 0}
     - target: {fileID: 5446663022671203526, guid: aeae88d7f4f51cf4c8b59b1a9c34e183, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -256
       objectReference: {fileID: 0}
     - target: {fileID: 5446663022671203526, guid: aeae88d7f4f51cf4c8b59b1a9c34e183, type: 3}
       propertyPath: m_LocalRotation.w
@@ -85,6 +89,12 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 2728791534965508322, guid: aeae88d7f4f51cf4c8b59b1a9c34e183, type: 3}
       insertIndex: -1
       addedObject: {fileID: 4910563912530829586}
+    - targetCorrespondingSourceObject: {fileID: 2728791534965508322, guid: aeae88d7f4f51cf4c8b59b1a9c34e183, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: -8187145902183028335}
+    - targetCorrespondingSourceObject: {fileID: 2728791534965508322, guid: aeae88d7f4f51cf4c8b59b1a9c34e183, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8718751378973431548}
   m_SourcePrefab: {fileID: 100100000, guid: aeae88d7f4f51cf4c8b59b1a9c34e183, type: 3}
 --- !u!1 &6792973873264365312 stripped
 GameObject:
@@ -183,11 +193,11 @@ MonoBehaviour:
   m_SmoothPosition: 0
   m_SmoothPositionAmount: 8
   m_TightenPosition: 0.1
-  m_TrackRotation: 1
+  m_TrackRotation: 0
   m_SmoothRotation: 0
   m_SmoothRotationAmount: 8
   m_TightenRotation: 0.1
-  m_TrackScale: 1
+  m_TrackScale: 0
   m_SmoothScale: 0
   m_SmoothScaleAmount: 8
   m_TightenScale: 0.1
@@ -269,7 +279,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0a1302d0d134fa8a2a5b3bf4aec3c20, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Unity.XR.Interaction.Toolkit::UnityEngine.XR.Interaction.Toolkit.Transformers.XRGeneralGrabTransformer
-  m_PermittedDisplacementAxes: -1
+  m_PermittedDisplacementAxes: 5
   m_ConstrainedAxisDisplacementMode: 1
   m_TwoHandedRotationMode: 1
   m_AllowOneHandedScaling: 1
@@ -302,8 +312,33 @@ Rigidbody:
     m_Bits: 0
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 0
+  m_UseGravity: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 80
   m_CollisionDetection: 0
+--- !u!114 &-8187145902183028335
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6792973873264365312}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c62d563adc674bc4983c52ebc4624b0c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SerializedLevelElement
+  elementName: small_white_building
+--- !u!114 &8718751378973431548
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6792973873264365312}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5533ed5685944369169e15a3a81bd6b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Building
