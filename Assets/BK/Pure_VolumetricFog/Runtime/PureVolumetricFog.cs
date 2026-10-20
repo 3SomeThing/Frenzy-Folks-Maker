@@ -778,7 +778,7 @@ namespace BKPureNature
 #if UNITY_6000_4_OR_NEWER
             if (!useSceneDepth || !_depthConfiguredCameras.Add(camera.GetEntityId()))
 #else
-            if (!useSceneDepth || !_depthConfiguredCameras.Add(camera.GetInstanceID()))
+            if (!useSceneDepth || !_depthConfiguredCameras.Add(camera.GetEntityId()))
 #endif
                 return;
 
