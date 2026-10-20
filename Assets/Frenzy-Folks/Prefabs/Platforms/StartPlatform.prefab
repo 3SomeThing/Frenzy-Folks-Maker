@@ -12,9 +12,7 @@ GameObject:
   - component: {fileID: 2579122505301995204}
   - component: {fileID: 860026790236922304}
   - component: {fileID: 6181224909509120189}
-  - component: {fileID: 8820956205444423645}
   - component: {fileID: 6835514207494674689}
-  - component: {fileID: 482505724529568480}
   - component: {fileID: 7831184978089785066}
   - component: {fileID: 6348000167782154622}
   - component: {fileID: -8326178253096914043}
@@ -120,33 +118,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 5, z: 1}
   m_Center: {x: 0, y: 3.5, z: 0}
---- !u!114 &8820956205444423645
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7713893165195602969}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Unity.Netcode.Runtime::Unity.Netcode.NetworkObject
-  GlobalObjectIdHash: 1856371634
-  InScenePlacedSourceGlobalObjectIdHash: 1856371634
-  m_InScenePlacedDisabledByDefault: 1
-  DeferredDespawnTick: 0
-  Ownership: 1
-  AlwaysReplicateAsRoot: 0
-  SynchronizeTransform: 1
-  m_InScenePlaced: 0
-  ActiveSceneSynchronization: 0
-  SceneMigrationSynchronization: 0
-  SpawnWithObservers: 1
-  DontDestroyWithOwner: 0
-  AutoObjectParentSync: 1
-  SyncOwnerTransformWhenParented: 1
-  AllowOwnerToParent: 0
 --- !u!114 &6835514207494674689
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -160,28 +131,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SerializedLevelElement
   elementName: start_platform
---- !u!114 &482505724529568480
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7713893165195602969}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b6077e1b9c5d786469d7dc298cd6e954, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::StartPlatform
-  checkpointIndex: 0
-  checkpointSound: {fileID: 0}
-  checkpointParticules: {fileID: 0}
-  cylinder: {fileID: 0}
-  playSoundAndAnimation: 0
-  changeColor: 0
-  startZone: {fileID: 0}
-  countdownDuration: 5
-  countdownCanvasName: PlayerCanvas
-  countdownTextName: StartTimerText
 --- !u!65 &7831184978089785066
 BoxCollider:
   m_ObjectHideFlags: 0
