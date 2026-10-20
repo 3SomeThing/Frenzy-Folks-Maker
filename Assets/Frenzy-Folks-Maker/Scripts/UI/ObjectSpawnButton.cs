@@ -16,13 +16,6 @@ public class ObjectButton : MonoBehaviour, IPointerDownHandler
     {
         _spawnAudioSource = GetComponent<AudioSource>();
     }
-    
-    // Attach to any object; point at the canvas and watch the console
-    void Update()
-    {
-        var es = UnityEngine.EventSystems.EventSystem.current;
-        Debug.Log($"EventSystem: {es != null}, module: {es?.currentInputModule?.GetType().Name}");
-    }
 
     public void OnPointerDown(PointerEventData eventData)
     {
