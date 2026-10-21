@@ -18,6 +18,8 @@ GameObject:
   - component: {fileID: -8326178253096914043}
   - component: {fileID: -2437064183451203978}
   - component: {fileID: -8209823366272298962}
+  - component: {fileID: -6973241136980019999}
+  - component: {fileID: -5294515318551822909}
   m_Layer: 0
   m_Name: StartPlatform
   m_TagString: Untagged
@@ -393,6 +395,30 @@ MonoBehaviour:
   countdownDuration: 5
   countdownCanvasName: PlayerCanvas
   countdownTextName: StartTimerText
+--- !u!114 &-6973241136980019999
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7713893165195602969}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0bcf0c4f1fa84222b11b4b8b09e304a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LockableElement
+--- !u!114 &-5294515318551822909
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7713893165195602969}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56d8f0e93f8d4dab844e8029bad95b4b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HoverableElement
 --- !u!1001 &5623595479725387689
 PrefabInstance:
   m_ObjectHideFlags: 0
