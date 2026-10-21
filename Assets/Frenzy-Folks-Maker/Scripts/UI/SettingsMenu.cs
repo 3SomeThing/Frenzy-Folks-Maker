@@ -33,7 +33,14 @@ public class SettingsMenu : NestedMenus
         {
             SaveLevel(name);
         }
-        
+    }
+    
+    public void AutoFillLevelName(TMP_InputField name)
+    {
+        if(VrGameState.Instance.SelectedLevelName != null && !string.IsNullOrWhiteSpace(VrGameState.Instance.SelectedLevelName))
+        {
+            name.text = VrGameState.Instance.SelectedLevelName;
+        }
     }
 
     public void SaveLevel(TMP_InputField name)

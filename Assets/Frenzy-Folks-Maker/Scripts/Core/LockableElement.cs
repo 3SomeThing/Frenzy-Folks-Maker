@@ -64,22 +64,27 @@ public class LockableElement : MonoBehaviour
 
     private void OnTriggerPressed(InputAction.CallbackContext context)
     {
-        XRBaseInteractor interactor = GetRightInteractor();
-        if (interactor == null) return;
+        foreach (IXRHoverInteractor hoverInteractor in _grabInteractable.interactorsHovering)
+        {
+            if (hoverInteractor is not XRBaseInteractor interactor) continue;
+            if (interactor is XRSocketInteractor || interactor is XRDirectInteractor) continue;
+            if (!IsRightHand(interactor)) continue;
 
-        _validTargets.Clear();
-        interactor.GetValidTargets(_validTargets);
-        if (_validTargets.Count == 0) return;
+            _validTargets.Clear();
+            interactor.GetValidTargets(_validTargets);
 
-        if (!ReferenceEquals(_validTargets[0], _grabInteractable)) return;
+            if (_validTargets.Count > 0 && ReferenceEquals(_validTargets[0], _grabInteractable))
+                SetLocked(!IsLocked);
 
-        SetLocked(!IsLocked);
+            return;
+        }
     }
     
     private static InputAction CreateDefaultAction()
     {
         var action = new InputAction("Lock", InputActionType.Button);
         action.AddBinding("<XRController>{RightHand}/triggerPressed");
+        action.AddBinding("<XRController>{RightHand}/trigger");
         action.AddBinding("<XRController>{RightHand}/{TriggerButton}");
         return action;
     }

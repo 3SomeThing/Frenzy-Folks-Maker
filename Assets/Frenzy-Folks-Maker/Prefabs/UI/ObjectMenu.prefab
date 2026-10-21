@@ -993,7 +993,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8590845238605256711, guid: de8e3441c04bfd045bd0f73e5512dfb6, type: 3}
       propertyPath: m_text
-      value: big pink building
+      value: big white building
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1367,7 +1367,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8590845238605256711, guid: de8e3441c04bfd045bd0f73e5512dfb6, type: 3}
       propertyPath: m_text
-      value: big pink building
+      value: medium pink building
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2009,7 +2009,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8590845238605256711, guid: de8e3441c04bfd045bd0f73e5512dfb6, type: 3}
       propertyPath: m_text
-      value: big pink building
+      value: small white building
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2170,7 +2170,7 @@ PrefabInstance:
     - target: {fileID: 5475656441689545986, guid: de8e3441c04bfd045bd0f73e5512dfb6, type: 3}
       propertyPath: prefab
       value: 
-      objectReference: {fileID: -8182747318662748897, guid: ebf15ae7831ca6744b38b3b5ba992a8e, type: 3}
+      objectReference: {fileID: -2437064183451203978, guid: 07313812e77c0234182773e2d500c10b, type: 3}
     - target: {fileID: 7698371997449683564, guid: de8e3441c04bfd045bd0f73e5512dfb6, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -2639,7 +2639,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8590845238605256711, guid: de8e3441c04bfd045bd0f73e5512dfb6, type: 3}
       propertyPath: m_text
-      value: big pink building
+      value: small blue building
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
