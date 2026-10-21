@@ -70,7 +70,7 @@ public class FrenzyLevelConfiguration
         }
     };
     
-    private static readonly string LevelsPath = Path.Combine(Application.streamingAssetsPath, "Levels");
+    public static readonly string LevelsPath = Path.Combine(Application.streamingAssetsPath, "Levels");
 
     [SerializeField]
     private List<ConfigurationEntry> configurationEntries = new();

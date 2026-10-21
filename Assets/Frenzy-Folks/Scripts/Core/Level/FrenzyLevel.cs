@@ -61,16 +61,16 @@ public class FrenzyLevel : NetworkBehaviour
         }
     }
 
-    private void LoadLevelConfiguration()
+    private void LoadLevelConfiguration(string levelName = "testing-playground.json")
     {
-        FrenzyLevelConfiguration.Load(this, "testing-playground.json", levelPrefabs);
-        Debug.Log("Level configuration loaded from testing-playground.json");
+        FrenzyLevelConfiguration.Load(this, levelName, levelPrefabs);
+        Debug.Log($"Level configuration loaded from {levelName}");
     }
 
-    public void SaveLevelConfiguration()
+    public void SaveLevelConfiguration(string levelName = "testing-playground.json")
     {
         FrenzyLevelConfiguration configuration = new FrenzyLevelConfiguration(this);
-        configuration.SaveLevelToFile("testing-playground.json");
-        Debug.Log("Level configuration saved to testing-playground.json");
+        configuration.SaveLevelToFile(levelName);
+        Debug.Log($"Level configuration saved to {levelName}");
     }
 }
