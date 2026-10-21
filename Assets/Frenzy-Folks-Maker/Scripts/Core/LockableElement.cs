@@ -1,8 +1,10 @@
-﻿using ITISKIRUHERE;
+﻿using System.Collections.Generic;
+using ITISKIRUHERE;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.XR.Interaction.Toolkit;
 using UnityEngine.XR.Interaction.Toolkit.Interactables;
+using UnityEngine.XR.Interaction.Toolkit.Interactors;
 
 [RequireComponent(typeof(HoverableElement))]
 [RequireComponent(typeof(XRGrabInteractable))]
@@ -24,6 +26,28 @@ public class LockableElement : MonoBehaviour
     
     public bool IsLocked { get => _isLocked; }
 
+    private static int _nextLockRef = 1;
+    private int _lockRef;
+    
+    private static XRRayInteractor _rightRayInteractor;
+    private static readonly List<IXRInteractable> _validTargets = new List<IXRInteractable>();
+    
+    private static XRRayInteractor GetRightRayInteractor()
+    {
+        if (_rightRayInteractor != null) return _rightRayInteractor;
+
+        foreach (XRRayInteractor ray in Object.FindObjectsByType<XRRayInteractor>(FindObjectsSortMode.None))
+        {
+            if (ray.handedness == InteractorHandedness.Right)
+            {
+                _rightRayInteractor = ray;
+                break;
+            }
+        }
+
+        return _rightRayInteractor;
+    }
+    
     private static InputAction CreateDefaultAction()
     {
         var action = new InputAction("Lock", InputActionType.Button);
@@ -83,6 +107,9 @@ public class LockableElement : MonoBehaviour
         
         _rightTriggerAction.Enable();
         _rightTriggerAction.performed += OnTriggerPressed;
+        
+        _lockRef = _nextLockRef;
+        _nextLockRef = _nextLockRef % 99 + 1; // boucle de 1 à 99
     }
 
     public void OnDestroy()
@@ -96,7 +123,14 @@ public class LockableElement : MonoBehaviour
     
     private void OnTriggerPressed(InputAction.CallbackContext context)
     {
-        if (!_grabInteractable.isHovered) return;
+        XRRayInteractor ray = GetRightRayInteractor();
+        if (ray == null) return;
+
+        _validTargets.Clear();
+        ray.GetValidTargets(_validTargets);
+        if (_validTargets.Count == 0) return;
+
+        if (!ReferenceEquals(_validTargets[0], _grabInteractable)) return;
 
         SetLocked(!IsLocked);
     }
@@ -136,7 +170,7 @@ public class LockableElement : MonoBehaviour
             }
             _currentOutline.OutlineMode = AdvancedOutline.Mode.OutlineVisible;
             _currentOutline.OutlineColor = Color.red;
-            _currentOutline.StencilRef = 1;
+            _currentOutline.StencilRef = _lockRef;
         }
         else
         {

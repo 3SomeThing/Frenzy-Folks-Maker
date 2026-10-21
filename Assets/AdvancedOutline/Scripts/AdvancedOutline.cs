@@ -32,7 +32,7 @@ namespace ITISKIRUHERE
         [SerializeField] Mode _outlineMode = Mode.OutlineVisible;
         [SerializeField] Color _outlineColor = Color.cyan;
         [SerializeField] [Range( 0f, 10f )] float _outlineWidth = 4f;
-        [SerializeField] [Range( 1, 200 )] int _stencilRef = 1;
+        [SerializeField] [Range( 1, 190 )] int _stencilRef = 1;
 
         [Header("Aesthetic Effects")]
         [SerializeField] bool _pulseWidth;
@@ -514,8 +514,8 @@ namespace ITISKIRUHERE
             _outlineMaskMaterial.SetFloat( _stencilRefId, _stencilRef );
             _outlineFillMaterial.SetFloat( _stencilRefId, _stencilRef );
 
-            _outlineMaskMaterial.renderQueue = 3000 + 100 + _stencilRef;
-            _outlineFillMaterial.renderQueue = 3000 + 100 + 250 + _stencilRef;
+            _outlineMaskMaterial.renderQueue = 2600 + _stencilRef;
+            _outlineFillMaterial.renderQueue = 2800 + _stencilRef;
             
             // Write static properties via property block
             if ( _propertyBlock == null )
