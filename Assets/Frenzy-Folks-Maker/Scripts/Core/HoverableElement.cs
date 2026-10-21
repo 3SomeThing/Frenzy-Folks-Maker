@@ -65,7 +65,6 @@ public class HoverableElement : MonoBehaviour
 
             if (_currentOutline == null) return;
             _currentOutline.OutlineMode = AdvancedOutline.Mode.OutlineVisible;
-            _currentOutline.DashedPattern = true;
             _currentOutline.StencilRef = 100;
         }
         else

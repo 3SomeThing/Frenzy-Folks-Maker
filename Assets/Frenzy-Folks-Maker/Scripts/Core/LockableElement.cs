@@ -29,23 +29,51 @@ public class LockableElement : MonoBehaviour
     private static int _nextLockRef = 1;
     private int _lockRef;
     
-    private static XRRayInteractor _rightRayInteractor;
+    private static XRBaseInteractor _rightInteractor;
     private static readonly List<IXRInteractable> _validTargets = new List<IXRInteractable>();
-    
-    private static XRRayInteractor GetRightRayInteractor()
-    {
-        if (_rightRayInteractor != null) return _rightRayInteractor;
 
-        foreach (XRRayInteractor ray in Object.FindObjectsByType<XRRayInteractor>(FindObjectsSortMode.None))
+    private static bool IsRightHand(XRBaseInteractor interactor)
+    {
+        if (interactor.handedness == InteractorHandedness.Right) return true;
+
+        for (Transform t = interactor.transform; t != null; t = t.parent)
         {
-            if (ray.handedness == InteractorHandedness.Right)
-            {
-                _rightRayInteractor = ray;
-                break;
-            }
+            if (t.name.ToLowerInvariant().Contains("right")) return true;
+        }
+        return false;
+    }
+
+    private static XRBaseInteractor GetRightInteractor()
+    {
+        if (_rightInteractor != null) return _rightInteractor;
+
+        foreach (XRBaseInteractor interactor in Object.FindObjectsByType<XRBaseInteractor>(FindObjectsSortMode.None))
+        {
+            if (interactor is XRSocketInteractor || interactor is XRDirectInteractor) continue;
+            if (!IsRightHand(interactor)) continue;
+
+            _rightInteractor = interactor;
+            break;
         }
 
-        return _rightRayInteractor;
+        if (_rightInteractor == null)
+            Debug.LogWarning("LockableElement : aucun interactor droit trouvé.");
+
+        return _rightInteractor;
+    }
+
+    private void OnTriggerPressed(InputAction.CallbackContext context)
+    {
+        XRBaseInteractor interactor = GetRightInteractor();
+        if (interactor == null) return;
+
+        _validTargets.Clear();
+        interactor.GetValidTargets(_validTargets);
+        if (_validTargets.Count == 0) return;
+
+        if (!ReferenceEquals(_validTargets[0], _grabInteractable)) return;
+
+        SetLocked(!IsLocked);
     }
     
     private static InputAction CreateDefaultAction()
@@ -119,20 +147,6 @@ public class LockableElement : MonoBehaviour
 
         if (_grabInteractable != null)
             _grabInteractable.selectEntered.RemoveListener(OnSelectEntered);
-    }
-    
-    private void OnTriggerPressed(InputAction.CallbackContext context)
-    {
-        XRRayInteractor ray = GetRightRayInteractor();
-        if (ray == null) return;
-
-        _validTargets.Clear();
-        ray.GetValidTargets(_validTargets);
-        if (_validTargets.Count == 0) return;
-
-        if (!ReferenceEquals(_validTargets[0], _grabInteractable)) return;
-
-        SetLocked(!IsLocked);
     }
 
     private void OnSelectEntered(SelectEnterEventArgs args)
