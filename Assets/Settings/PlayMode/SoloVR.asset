@@ -43,5 +43,5 @@ MonoBehaviour:
         m_Settings:
           PlayerTag: 
           RoleMask: 1
-          InitialScene: {fileID: 102900000, guid: c945bd4ccc205284ab5fffcaffd859c8, type: 3}
+          InitialScene: {fileID: 102900000, guid: 19ee1ff30e6c5bf409e8781a295dddc0, type: 3}
         m_Decorators: []

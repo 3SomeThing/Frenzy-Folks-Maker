@@ -32,7 +32,7 @@ public class NestedMenus : MonoBehaviour
     
     public void CloseAllMenus()
     {
-        for (int i = _menus.Count - 1; i >= 0; i--)
+        for (int i = _menus.Count - 1; i > 0; i--)
         {
             _menus[i].SetActive(false);
             _menus.RemoveAt(i);

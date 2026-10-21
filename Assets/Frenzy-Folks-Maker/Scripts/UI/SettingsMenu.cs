@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.IO;
 using TMPro;
+using UnityEditor;
 using UnityEngine;
 
 public class SettingsMenu : NestedMenus
@@ -47,5 +48,11 @@ public class SettingsMenu : NestedMenus
         CloseAllSubMenus();
     }
     
-    
+    public void ReturnToMenu(string scene)
+    {
+        UnityEngine.SceneManagement.SceneManager.LoadScene(scene);
+        
+        CloseAllMenus();
+        gameObject.SetActive(false);
+    }
 }
