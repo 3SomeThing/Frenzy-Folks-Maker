@@ -2444,6 +2444,7 @@ GameObject:
   - component: {fileID: 8016508561138059776}
   - component: {fileID: 8583039310010090486}
   - component: {fileID: 2543274881432950235}
+  - component: {fileID: 5444480276789521402}
   m_Layer: 0
   m_Name: Platform
   m_TagString: Untagged
@@ -2466,6 +2467,7 @@ Transform:
   m_Children:
   - {fileID: 6541821718529140121}
   - {fileID: 4638232978291851841}
+  - {fileID: 438425000624160355}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &767524281423769668
@@ -2625,14 +2627,14 @@ MonoBehaviour:
   m_PermittedDisplacementAxes: -1
   m_ConstrainedAxisDisplacementMode: 1
   m_TwoHandedRotationMode: 1
-  m_AllowOneHandedScaling: 1
-  m_AllowTwoHandedScaling: 0
+  m_AllowOneHandedScaling: 0
+  m_AllowTwoHandedScaling: 1
   m_OneHandedScaleSpeed: 0.5
-  m_ThresholdMoveRatioForScale: 0
-  m_ClampScaling: 0
-  m_MinimumScaleRatio: 0.01
-  m_MaximumScaleRatio: 1
-  m_ScaleMultiplier: 0.1
+  m_ThresholdMoveRatioForScale: 0.05
+  m_ClampScaling: 1
+  m_MinimumScaleRatio: 1
+  m_MaximumScaleRatio: 3
+  m_ScaleMultiplier: 0.25
 --- !u!114 &2543274881432950235
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2650,7 +2652,7 @@ MonoBehaviour:
   m_InteractionLayers:
     m_Bits: 1
   m_DistanceCalculationMode: 1
-  m_SelectMode: 0
+  m_SelectMode: 1
   m_FocusMode: 1
   m_CustomReticle: {fileID: 0}
   m_AllowGazeInteraction: 0
@@ -2707,11 +2709,11 @@ MonoBehaviour:
   m_StartingInteractionStrengthFilters: []
   m_AutoFindParentInteractableInHierarchy: 0
   m_ParentInteractableObject: {fileID: 0}
-  m_AttachTransform: {fileID: 0}
+  m_AttachTransform: {fileID: 438425000624160355}
   m_SecondaryAttachTransform: {fileID: 0}
   m_UseDynamicAttach: 1
   m_MatchAttachPosition: 1
-  m_MatchAttachRotation: 0
+  m_MatchAttachRotation: 1
   m_SnapToColliderVolume: 1
   m_ReinitializeDynamicAttachEverySingleGrab: 1
   m_AttachEaseInTime: 0.15
@@ -2729,7 +2731,7 @@ MonoBehaviour:
   m_SmoothRotation: 0
   m_SmoothRotationAmount: 8
   m_TightenRotation: 0.1
-  m_TrackScale: 0
+  m_TrackScale: 1
   m_SmoothScale: 0
   m_SmoothScaleAmount: 8
   m_TightenScale: 0.1
@@ -2754,33 +2756,17 @@ MonoBehaviour:
   m_ThrowAngularVelocityScale: 1
   m_ForceGravityOnDetach: 0
   m_UnparentTransformOnGrab: 0
-  m_RetainTransformParent: 0
-  m_StartingSingleGrabTransformers: []
-  m_StartingMultipleGrabTransformers: []
+  m_RetainTransformParent: 1
+  m_StartingSingleGrabTransformers:
+  - {fileID: 8583039310010090486}
+  m_StartingMultipleGrabTransformers:
+  - {fileID: 8583039310010090486}
   m_AddDefaultGrabTransformers: 1
   m_FarAttachMode: 0
   m_LimitLinearVelocity: 0
   m_LimitAngularVelocity: 0
   m_MaxLinearVelocityDelta: 10
   m_MaxAngularVelocityDelta: 20
-  leftJoystickAction:
-    m_Name: Left Joystick
-    m_Type: 0
-    m_ExpectedControlType: 
-    m_Id: 5b676792-92b8-40e3-81f1-2738c7f89224
-    m_Processors: 
-    m_Interactions: 
-    m_SingletonActionBindings:
-    - m_Name: 
-      m_Id: a68f7df3-de32-4b42-9374-edfd674d6a12
-      m_Path: <XRController>{LeftHand}/primary2DAxis
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Left Joystick
-      m_Flags: 0
-    m_Flags: 0
-    m_Priority: 0
   rightJoystickAction:
     m_Name: Right Joystick
     m_Type: 0
@@ -2799,3 +2785,51 @@ MonoBehaviour:
       m_Flags: 0
     m_Flags: 0
     m_Priority: 0
+--- !u!114 &5444480276789521402
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5424937700218060980}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8cda116d62554d0c8d313bfa55680985, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Platform
+  makePlatformFall: 0
+  delayBeforeFalling: 2
+  delayBeforeRespawning: 3
+  _crumbleSound: {fileID: 0}
+  _crumbleParticles: {fileID: 0}
+--- !u!1 &7943310789002126712
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 438425000624160355}
+  m_Layer: 0
+  m_Name: Handle
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &438425000624160355
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7943310789002126712}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 1.01, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6553520164274308001}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

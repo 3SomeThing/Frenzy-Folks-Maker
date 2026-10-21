@@ -211,7 +211,10 @@ GameObject:
   - component: {fileID: -2942457641957515227}
   - component: {fileID: 6252343709494064341}
   - component: {fileID: -2404274922920206672}
+  - component: {fileID: -6161884171831681065}
+  - component: {fileID: -5544424905757042684}
   - component: {fileID: -7418323728451696784}
+  - component: {fileID: -3743895546334849576}
   m_Layer: 0
   m_Name: Turret_Trap
   m_TagString: Turret
@@ -292,13 +295,13 @@ MonoBehaviour:
   m_PermittedDisplacementAxes: -1
   m_ConstrainedAxisDisplacementMode: 1
   m_TwoHandedRotationMode: 1
-  m_AllowOneHandedScaling: 1
-  m_AllowTwoHandedScaling: 0
+  m_AllowOneHandedScaling: 0
+  m_AllowTwoHandedScaling: 1
   m_OneHandedScaleSpeed: 0.5
   m_ThresholdMoveRatioForScale: 0.05
   m_ClampScaling: 1
-  m_MinimumScaleRatio: 0.25
-  m_MaximumScaleRatio: 2
+  m_MinimumScaleRatio: 1
+  m_MaximumScaleRatio: 3
   m_ScaleMultiplier: 0.25
 --- !u!114 &-2404274922920206672
 MonoBehaviour:
@@ -317,7 +320,7 @@ MonoBehaviour:
   m_InteractionLayers:
     m_Bits: 1
   m_DistanceCalculationMode: 1
-  m_SelectMode: 0
+  m_SelectMode: 1
   m_FocusMode: 1
   m_CustomReticle: {fileID: 0}
   m_AllowGazeInteraction: 0
@@ -396,7 +399,7 @@ MonoBehaviour:
   m_SmoothRotation: 0
   m_SmoothRotationAmount: 8
   m_TightenRotation: 0.1
-  m_TrackScale: 0
+  m_TrackScale: 1
   m_SmoothScale: 0
   m_SmoothScaleAmount: 8
   m_TightenScale: 0.1
@@ -423,31 +426,14 @@ MonoBehaviour:
   m_UnparentTransformOnGrab: 0
   m_RetainTransformParent: 1
   m_StartingSingleGrabTransformers: []
-  m_StartingMultipleGrabTransformers: []
+  m_StartingMultipleGrabTransformers:
+  - {fileID: 6252343709494064341}
   m_AddDefaultGrabTransformers: 1
   m_FarAttachMode: 0
   m_LimitLinearVelocity: 0
   m_LimitAngularVelocity: 0
   m_MaxLinearVelocityDelta: 10
   m_MaxAngularVelocityDelta: 20
-  leftJoystickAction:
-    m_Name: Left Joystick
-    m_Type: 0
-    m_ExpectedControlType: 
-    m_Id: d7baab04-ccbe-4b4f-8652-d5929d6edd77
-    m_Processors: 
-    m_Interactions: 
-    m_SingletonActionBindings:
-    - m_Name: 
-      m_Id: 2fd38bc0-bb39-4809-bdba-16e89a5a2f50
-      m_Path: <XRController>{LeftHand}/primary2DAxis
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Left Joystick
-      m_Flags: 0
-    m_Flags: 0
-    m_Priority: 0
   rightJoystickAction:
     m_Name: Right Joystick
     m_Type: 0
@@ -466,6 +452,60 @@ MonoBehaviour:
       m_Flags: 0
     m_Flags: 0
     m_Priority: 0
+--- !u!114 &-6161884171831681065
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5670505714895977808}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.Netcode.Runtime::Unity.Netcode.NetworkObject
+  GlobalObjectIdHash: 97590100
+  InScenePlacedSourceGlobalObjectIdHash: 0
+  m_InScenePlacedDisabledByDefault: 0
+  DeferredDespawnTick: 0
+  Ownership: 1
+  AlwaysReplicateAsRoot: 0
+  SynchronizeTransform: 1
+  m_InScenePlaced: 0
+  ActiveSceneSynchronization: 0
+  SceneMigrationSynchronization: 1
+  SpawnWithObservers: 1
+  DontDestroyWithOwner: 0
+  AutoObjectParentSync: 1
+  SyncOwnerTransformWhenParented: 1
+  AllowOwnerToParent: 0
+--- !u!114 &-5544424905757042684
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5670505714895977808}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e30cd147d42741678678d14be6eb0338, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TurretFSM
+  ShowTopMostFoldoutHeaderGroup: 1
+  turretHead: {fileID: 4124795757751045003}
+  sweepAngle: 45
+  sweepSpeed: 1
+  returnToIdleDuration: 0.5
+  detectionRadius: 10
+  detectionCollider: {fileID: 0}
+  targetingSpeed: 5
+  lockTolerance: 5
+  projectilePrefab: {fileID: 0}
+  firePoint: {fileID: 0}
+  projectileSpeed: 10
+  projectileForce: 50
+  fireRate: 1
+  targetTransform: {fileID: 0}
 --- !u!65 &-7418323728451696784
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -487,6 +527,23 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &-3743895546334849576
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5670505714895977808}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87996e81a5026dc429bfd6a9271548b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.XR.Interaction.Toolkit::UnityEngine.XR.Interaction.Toolkit.Interactables.XRInteractableSnapVolume
+  m_InteractionManager: {fileID: 0}
+  m_InteractableObject: {fileID: 0}
+  m_SnapCollider: {fileID: -7418323728451696784}
+  m_DisableSnapColliderWhenSelected: 1
+  m_SnapToCollider: {fileID: 0}
 --- !u!1 &7130438860629149374
 GameObject:
   m_ObjectHideFlags: 0

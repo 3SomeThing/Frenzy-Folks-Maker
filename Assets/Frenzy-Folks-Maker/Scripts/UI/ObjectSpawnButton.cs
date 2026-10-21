@@ -1,5 +1,4 @@
 using System;
-using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.XR.Interaction.Toolkit.Interactables;
@@ -25,6 +24,12 @@ public class ObjectButton : MonoBehaviour, IPointerDownHandler
 
         Vector3 hitPoint = eventData.pointerCurrentRaycast.worldPosition;
         _spawnAudioSource.Play();
+        
+        if(prefab.gameObject.GetComponent<Building>() != null)
+        {
+            hitPoint += Vector3.forward * 50F;
+            hitPoint.y = prefab.gameObject.transform.position.y / 20F;
+        }
 
         XRGrabInteractable spawned = Instantiate(prefab, hitPoint, prefab.gameObject.transform.rotation, GetParentLevel().transform);
         interactor.interactionManager.SelectEnter(interactor, (IXRSelectInteractable)spawned);
