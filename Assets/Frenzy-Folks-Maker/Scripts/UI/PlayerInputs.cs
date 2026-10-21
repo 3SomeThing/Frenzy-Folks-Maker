@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -5,22 +6,28 @@ using UnityEngine.SceneManagement;
 
 public class PlayerInputs : MonoBehaviour
 {
+    [Serializable]
+    private class MenuInput
+    {
+        [Tooltip("Input button that toggles the menu.")]
+        public InputActionProperty button;
+
+        [Tooltip("Menu to toggle when the button is pressed.")]
+        public GameObject menu;
+
+        [NonSerialized]
+        public Action<InputAction.CallbackContext> callback;
+    }
+
     private bool _inputEnabled;
-    
+
+    [Tooltip("Additional button-to-menu bindings.")]
     [SerializeField]
-    private GameObject objectToToggle;
+    private List<MenuInput> additionalMenuInputs = new List<MenuInput>();
 
     [Tooltip("Scene names where this input is active. Leave empty to allow every scene.")]
     [SerializeField]
     private List<string> allowedScenes = new List<string>();
-
-    [SerializeField]
-    private InputActionProperty leftPrimaryButton = new InputActionProperty(
-        new InputAction(
-            "Left Primary Button",
-            InputActionType.Button,
-            "<XRController>{LeftHand}/primaryButton"));
-
 
     private void OnEnable()
     {
@@ -46,8 +53,16 @@ public class PlayerInputs : MonoBehaviour
             if (_inputEnabled)
                 return;
 
-            leftPrimaryButton.action.performed += OnLeftPrimaryButtonPerformed;
-            leftPrimaryButton.action.Enable();
+            foreach (MenuInput menuInput in additionalMenuInputs)
+            {
+                if (menuInput == null || menuInput.button.action == null)
+                    continue;
+
+                menuInput.callback = context => OnAdditionalMenuInputPerformed(menuInput, context);
+                menuInput.button.action.performed += menuInput.callback;
+                menuInput.button.action.Enable();
+            }
+
             _inputEnabled = true;
             return;
         }
@@ -60,8 +75,18 @@ public class PlayerInputs : MonoBehaviour
         if (!_inputEnabled)
             return;
 
-        leftPrimaryButton.action.performed -= OnLeftPrimaryButtonPerformed;
-        leftPrimaryButton.action.Disable();
+        foreach (MenuInput menuInput in additionalMenuInputs)
+        {
+            if (menuInput == null || menuInput.button.action == null)
+                continue;
+
+            if (menuInput.callback != null)
+                menuInput.button.action.performed -= menuInput.callback;
+
+            menuInput.button.action.Disable();
+            menuInput.callback = null;
+        }
+
         _inputEnabled = false;
     }
 
@@ -74,14 +99,30 @@ public class PlayerInputs : MonoBehaviour
         return allowedScenes.Contains(activeSceneName);
     }
 
-    private void OnLeftPrimaryButtonPerformed(InputAction.CallbackContext context)
+    private void ToggleMenu(GameObject menu)
     {
-        if (objectToToggle == null)
+        if (menu == null)
         {
             Debug.LogWarning($"{nameof(PlayerInputs)} requires an object to toggle.", this);
             return;
         }
 
-        objectToToggle.SetActive(!objectToToggle.activeSelf);
+        bool shouldOpen = !menu.activeSelf;
+
+        if (shouldOpen)
+        {
+            foreach (MenuInput menuInput in additionalMenuInputs)
+            {
+                if (menuInput != null && menuInput.menu != null && menuInput.menu != menu)
+                    menuInput.menu.SetActive(false);
+            }
+        }
+
+        menu.SetActive(shouldOpen);
+    }
+
+    private void OnAdditionalMenuInputPerformed(MenuInput menuInput, InputAction.CallbackContext context)
+    {
+        ToggleMenu(menuInput.menu);
     }
 }
