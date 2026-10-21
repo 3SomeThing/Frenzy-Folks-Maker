@@ -2442,10 +2442,8 @@ GameObject:
   - component: {fileID: 750531041272389600}
   - component: {fileID: 5916651026256490942}
   - component: {fileID: 8016508561138059776}
-  - component: {fileID: 3415621776983429407}
   - component: {fileID: 8583039310010090486}
   - component: {fileID: 2543274881432950235}
-  - component: {fileID: 6012281262541623505}
   m_Layer: 0
   m_Name: Platform
   m_TagString: Untagged
@@ -2612,33 +2610,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SerializedLevelElement
   elementName: platform
---- !u!114 &3415621776983429407
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5424937700218060980}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Unity.Netcode.Runtime::Unity.Netcode.NetworkObject
-  GlobalObjectIdHash: 3767755990
-  InScenePlacedSourceGlobalObjectIdHash: 0
-  m_InScenePlacedDisabledByDefault: 0
-  DeferredDespawnTick: 0
-  Ownership: 1
-  AlwaysReplicateAsRoot: 0
-  SynchronizeTransform: 1
-  m_InScenePlaced: 0
-  ActiveSceneSynchronization: 0
-  SceneMigrationSynchronization: 1
-  SpawnWithObservers: 1
-  DontDestroyWithOwner: 0
-  AutoObjectParentSync: 1
-  SyncOwnerTransformWhenParented: 1
-  AllowOwnerToParent: 0
 --- !u!114 &8583039310010090486
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2828,20 +2799,3 @@ MonoBehaviour:
       m_Flags: 0
     m_Flags: 0
     m_Priority: 0
---- !u!114 &6012281262541623505
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5424937700218060980}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8cda116d62554d0c8d313bfa55680985, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Platform
-  makePlatformFall: 0
-  delayBeforeFalling: 2
-  delayBeforeRespawning: 3
-  _crumbleSound: {fileID: 0}
-  _crumbleParticles: {fileID: 0}

@@ -12,10 +12,8 @@ GameObject:
   - component: {fileID: 2579122505301995204}
   - component: {fileID: 860026790236922304}
   - component: {fileID: 6181224909509120189}
-  - component: {fileID: 8820956205444423645}
   - component: {fileID: 6835514207494674689}
   - component: {fileID: 7831184978089785066}
-  - component: {fileID: 3918365230292333300}
   - component: {fileID: 5712509865502932484}
   - component: {fileID: 6232967438144505350}
   - component: {fileID: 566131797826126975}
@@ -120,33 +118,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 10, z: 1}
   m_Center: {x: 0, y: 6, z: 0}
---- !u!114 &8820956205444423645
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7713893165195602969}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Unity.Netcode.Runtime::Unity.Netcode.NetworkObject
-  GlobalObjectIdHash: 2748222197
-  InScenePlacedSourceGlobalObjectIdHash: 1856371634
-  m_InScenePlacedDisabledByDefault: 1
-  DeferredDespawnTick: 0
-  Ownership: 1
-  AlwaysReplicateAsRoot: 0
-  SynchronizeTransform: 1
-  m_InScenePlaced: 0
-  ActiveSceneSynchronization: 0
-  SceneMigrationSynchronization: 0
-  SpawnWithObservers: 1
-  DontDestroyWithOwner: 0
-  AutoObjectParentSync: 1
-  SyncOwnerTransformWhenParented: 1
-  AllowOwnerToParent: 0
 --- !u!114 &6835514207494674689
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -181,23 +152,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &3918365230292333300
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7713893165195602969}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe57746d0a0c410495e48e5c26587b77, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::EndPlatform
-  ShowTopMostFoldoutHeaderGroup: 1
-  endZone: {fileID: 7831184978089785066}
-  endTimerDuration: 20
-  countdownCanvasName: PlayerCanvas
-  countdownTextName: EndTimerText
 --- !u!114 &5712509865502932484
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -348,7 +302,7 @@ MonoBehaviour:
   m_SmoothScale: 0
   m_SmoothScaleAmount: 8
   m_TightenScale: 0.1
-  m_ThrowOnDetach: 1
+  m_ThrowOnDetach: 0
   m_ThrowSmoothingDuration: 0.25
   m_ThrowSmoothingCurve:
     serializedVersion: 2
@@ -368,7 +322,7 @@ MonoBehaviour:
   m_ThrowVelocityScale: 1.5
   m_ThrowAngularVelocityScale: 1
   m_ForceGravityOnDetach: 0
-  m_UnparentTransformOnGrab: 1
+  m_UnparentTransformOnGrab: 0
   m_RetainTransformParent: 1
   m_StartingSingleGrabTransformers: []
   m_StartingMultipleGrabTransformers: []
