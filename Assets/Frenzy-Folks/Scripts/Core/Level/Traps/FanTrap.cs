@@ -11,12 +11,12 @@ public class FanTrap : MonoBehaviour
     [SerializeField] private CapsuleCollider windTrigger;
     [SerializeField] private bool debugLogs = false;
 
-    private Quaternion initialHeadRotation;
     private float cycleStartTime;
     private float currentSweepAngle;
     private int playerLayer; //TODO: Generique partout
     private bool wasBlowing;
-
+    private float appliedSweepAngle;
+    
     private void Awake()
     {
         playerLayer = LayerMask.NameToLayer("Player"); //TODO: Generique partout
@@ -60,11 +60,11 @@ public class FanTrap : MonoBehaviour
             return;
         }
 
-        initialHeadRotation = transform.rotation;
         toggleParticlesAndSound(true);
         wasBlowing = false;
         cycleStartTime = Time.time;
-
+        appliedSweepAngle = 0f;
+        
         if (debugLogs)
         {
             Debug.Log(
@@ -101,8 +101,10 @@ public class FanTrap : MonoBehaviour
         {
             float sweepProgress = Mathf.PingPong(cycleTime / blowingDuration * 2f, 1f);
             currentSweepAngle = Mathf.Lerp(-sweepAngle, sweepAngle, sweepProgress);
-            transform.localRotation =
-                initialHeadRotation * Quaternion.Euler(0f, currentSweepAngle, 0f);
+
+            float delta = currentSweepAngle - appliedSweepAngle;
+            transform.Rotate(0f, delta, 0f, Space.Self);
+            appliedSweepAngle = currentSweepAngle;
         }
     }
 
