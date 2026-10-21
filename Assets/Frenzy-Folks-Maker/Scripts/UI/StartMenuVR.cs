@@ -26,7 +26,7 @@ public class StartMenuVR : MonoBehaviour
 
     public void Awake()
     {
-        VrGameState.Reset();
+        VrGameState.Instance.ResetState();
         loadGameButton.interactable = false;
 
         loadGameButton.onClick.AddListener(StartGame);
@@ -38,8 +38,6 @@ public class StartMenuVR : MonoBehaviour
     
     public void OnDestroy()
     {
-        VrGameState.Reset();
-
         loadGameButton.onClick.RemoveListener(StartGame);
         quitGameButton.onClick.RemoveListener(QuitGame);
     }
@@ -79,8 +77,8 @@ public class StartMenuVR : MonoBehaviour
     {
         HighlightItem(newLevelItem);
 
-        VrGameState.SelectedLevelName = null;
-        VrGameState.IsNewLevel = true;
+        VrGameState.Instance.SelectedLevelName = null;
+        VrGameState.Instance.IsNewLevel = true;
         loadGameButton.interactable = true;
     }
 
@@ -88,8 +86,8 @@ public class StartMenuVR : MonoBehaviour
     {
         HighlightItem(clickedLevelItem);
 
-        VrGameState.SelectedLevelName = rawName;
-        VrGameState.IsNewLevel = false;
+        VrGameState.Instance.SelectedLevelName = rawName;
+        VrGameState.Instance.IsNewLevel = false;
         loadGameButton.interactable = true;
     }
 
@@ -120,7 +118,7 @@ public class StartMenuVR : MonoBehaviour
 
     public void StartGame()
     {
-        if (!VrGameState.HasSelection) return;
+        if (!VrGameState.Instance.HasSelection) return;
 
         SceneManager.LoadScene("LevelEditor");
     }

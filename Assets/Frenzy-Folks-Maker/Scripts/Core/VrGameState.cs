@@ -1,18 +1,20 @@
 ﻿using Unity.Netcode;
+using UnityEngine;
 
-public class VrGameState : NetworkBehaviour
+public class VrGameState : MonoBehaviour
 {
     public static VrGameState Instance;
 
-    public static string SelectedLevelName;
-    public static bool IsNewLevel;
-    public static bool HasSelection => IsNewLevel || !string.IsNullOrEmpty(SelectedLevelName);
+    public string SelectedLevelName;
+    public bool IsNewLevel;
+    public bool HasSelection => IsNewLevel || !string.IsNullOrEmpty(SelectedLevelName);
 
-    public static void Reset()
+    public void ResetState()
     {
         SelectedLevelName = null;
         IsNewLevel = false;
     }
+    
     public void Awake()
     {
         if (Instance != null && Instance != this)
@@ -22,13 +24,5 @@ public class VrGameState : NetworkBehaviour
         }
 
         Instance = this;
-    }
-
-    private void OnDestroy()
-    {
-        if (Instance == this)
-        {
-            Instance = null;
-        }
     }
 }
