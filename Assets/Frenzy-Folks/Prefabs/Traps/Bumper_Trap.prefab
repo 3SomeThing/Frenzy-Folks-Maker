@@ -8,34 +8,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: -2908636070154886759, guid: a65279c4fad7ab448813d9e259e9a3b9, type: 3}
-      propertyPath: m_Convex
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: -2908636070154886759, guid: a65279c4fad7ab448813d9e259e9a3b9, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: -2908636070154886759, guid: a65279c4fad7ab448813d9e259e9a3b9, type: 3}
-      propertyPath: m_IsTrigger
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -2908636070154886759, guid: a65279c4fad7ab448813d9e259e9a3b9, type: 3}
-      propertyPath: m_ExcludeLayers.m_Bits
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5898372634543305685, guid: a65279c4fad7ab448813d9e259e9a3b9, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 5898372634543305685, guid: a65279c4fad7ab448813d9e259e9a3b9, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 5898372634543305685, guid: a65279c4fad7ab448813d9e259e9a3b9, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 5
-      objectReference: {fileID: 0}
     - target: {fileID: 5898372634543305685, guid: a65279c4fad7ab448813d9e259e9a3b9, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -76,10 +48,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5898372634543305685, guid: a65279c4fad7ab448813d9e259e9a3b9, type: 3}
-      propertyPath: m_ConstrainProportionsScale
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 6525973169812466031, guid: a65279c4fad7ab448813d9e259e9a3b9, type: 3}
       propertyPath: m_Name
       value: Bumper_Trap
@@ -90,292 +58,17 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 6525973169812466031, guid: a65279c4fad7ab448813d9e259e9a3b9, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 3905085655548420479}
+      addedObject: {fileID: 3791709000323751749}
     - targetCorrespondingSourceObject: {fileID: 6525973169812466031, guid: a65279c4fad7ab448813d9e259e9a3b9, type: 3}
       insertIndex: -1
-      addedObject: {fileID: -2400888767637461573}
-    - targetCorrespondingSourceObject: {fileID: 6525973169812466031, guid: a65279c4fad7ab448813d9e259e9a3b9, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: -1617682023636904463}
-    - targetCorrespondingSourceObject: {fileID: 6525973169812466031, guid: a65279c4fad7ab448813d9e259e9a3b9, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: -7595892259896914049}
-    - targetCorrespondingSourceObject: {fileID: 6525973169812466031, guid: a65279c4fad7ab448813d9e259e9a3b9, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: -4510201160634604732}
-    - targetCorrespondingSourceObject: {fileID: 6525973169812466031, guid: a65279c4fad7ab448813d9e259e9a3b9, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 5226294317806381816}
-    - targetCorrespondingSourceObject: {fileID: 6525973169812466031, guid: a65279c4fad7ab448813d9e259e9a3b9, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 4844983264859571191}
+      addedObject: {fileID: -5067210135890398177}
   m_SourcePrefab: {fileID: 100100000, guid: a65279c4fad7ab448813d9e259e9a3b9, type: 3}
 --- !u!1 &3892407871355116576 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6525973169812466031, guid: a65279c4fad7ab448813d9e259e9a3b9, type: 3}
   m_PrefabInstance: {fileID: 7824008554010424655}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &3905085655548420479
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3892407871355116576}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c62d563adc674bc4983c52ebc4624b0c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::SerializedLevelElement
-  elementName: bumper_trap
---- !u!54 &-2400888767637461573
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3892407871355116576}
-  serializedVersion: 5
-  m_Mass: 1
-  m_LinearDamping: 0
-  m_AngularDamping: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 0
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
---- !u!114 &-1617682023636904463
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3892407871355116576}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0a1302d0d134fa8a2a5b3bf4aec3c20, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Unity.XR.Interaction.Toolkit::UnityEngine.XR.Interaction.Toolkit.Transformers.XRGeneralGrabTransformer
-  m_PermittedDisplacementAxes: -1
-  m_ConstrainedAxisDisplacementMode: 1
-  m_TwoHandedRotationMode: 1
-  m_AllowOneHandedScaling: 0
-  m_AllowTwoHandedScaling: 1
-  m_OneHandedScaleSpeed: 0.5
-  m_ThresholdMoveRatioForScale: 0.05
-  m_ClampScaling: 1
-  m_MinimumScaleRatio: 1
-  m_MaximumScaleRatio: 3
-  m_ScaleMultiplier: 0.25
---- !u!114 &-7595892259896914049
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3892407871355116576}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 561cc57c3e9c94b419eb0bae14eda9ed, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::MovableLevelElement
-  m_InteractionManager: {fileID: 0}
-  m_Colliders: []
-  m_InteractionLayers:
-    m_Bits: 1
-  m_DistanceCalculationMode: 1
-  m_SelectMode: 1
-  m_FocusMode: 1
-  m_CustomReticle: {fileID: 0}
-  m_AllowGazeInteraction: 0
-  m_AllowGazeSelect: 0
-  m_OverrideGazeTimeToSelect: 0
-  m_GazeTimeToSelect: 0.5
-  m_OverrideTimeToAutoDeselectGaze: 0
-  m_TimeToAutoDeselectGaze: 3
-  m_AllowGazeAssistance: 0
-  m_FirstHoverEntered:
-    m_PersistentCalls:
-      m_Calls: []
-  m_LastHoverExited:
-    m_PersistentCalls:
-      m_Calls: []
-  m_HoverEntered:
-    m_PersistentCalls:
-      m_Calls: []
-  m_HoverExited:
-    m_PersistentCalls:
-      m_Calls: []
-  m_FirstSelectEntered:
-    m_PersistentCalls:
-      m_Calls: []
-  m_LastSelectExited:
-    m_PersistentCalls:
-      m_Calls: []
-  m_SelectEntered:
-    m_PersistentCalls:
-      m_Calls: []
-  m_SelectExited:
-    m_PersistentCalls:
-      m_Calls: []
-  m_FirstFocusEntered:
-    m_PersistentCalls:
-      m_Calls: []
-  m_LastFocusExited:
-    m_PersistentCalls:
-      m_Calls: []
-  m_FocusEntered:
-    m_PersistentCalls:
-      m_Calls: []
-  m_FocusExited:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Activated:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Deactivated:
-    m_PersistentCalls:
-      m_Calls: []
-  m_StartingHoverFilters: []
-  m_StartingSelectFilters: []
-  m_StartingInteractionStrengthFilters: []
-  m_AutoFindParentInteractableInHierarchy: 0
-  m_ParentInteractableObject: {fileID: 0}
-  m_AttachTransform: {fileID: 0}
-  m_SecondaryAttachTransform: {fileID: 0}
-  m_UseDynamicAttach: 1
-  m_MatchAttachPosition: 1
-  m_MatchAttachRotation: 1
-  m_SnapToColliderVolume: 1
-  m_ReinitializeDynamicAttachEverySingleGrab: 1
-  m_AttachEaseInTime: 0.15
-  m_MovementType: 2
-  m_PredictedVisualsTransform: {fileID: 0}
-  m_VelocityDamping: 1
-  m_VelocityScale: 1
-  m_AngularVelocityDamping: 1
-  m_AngularVelocityScale: 1
-  m_TrackPosition: 1
-  m_SmoothPosition: 0
-  m_SmoothPositionAmount: 8
-  m_TightenPosition: 0.1
-  m_TrackRotation: 0
-  m_SmoothRotation: 0
-  m_SmoothRotationAmount: 8
-  m_TightenRotation: 0.1
-  m_TrackScale: 1
-  m_SmoothScale: 0
-  m_SmoothScaleAmount: 8
-  m_TightenScale: 0.1
-  m_ThrowOnDetach: 0
-  m_ThrowSmoothingDuration: 0.25
-  m_ThrowSmoothingCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 1
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  m_ThrowVelocityScale: 1.5
-  m_ThrowAngularVelocityScale: 1
-  m_ForceGravityOnDetach: 0
-  m_UnparentTransformOnGrab: 0
-  m_RetainTransformParent: 1
-  m_StartingSingleGrabTransformers: []
-  m_StartingMultipleGrabTransformers:
-  - {fileID: -1617682023636904463}
-  m_AddDefaultGrabTransformers: 1
-  m_FarAttachMode: 0
-  m_LimitLinearVelocity: 0
-  m_LimitAngularVelocity: 0
-  m_MaxLinearVelocityDelta: 10
-  m_MaxAngularVelocityDelta: 20
-  leftJoystickAction:
-    m_Name: Left Joystick
-    m_Type: 0
-    m_ExpectedControlType: 
-    m_Id: 43451d77-7ba7-4c81-95d3-8e72096913e2
-    m_Processors: 
-    m_Interactions: 
-    m_SingletonActionBindings:
-    - m_Name: 
-      m_Id: f7d62bb2-7fed-4c64-b3c0-d5a4c88dce60
-      m_Path: <XRController>{LeftHand}/primary2DAxis
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Left Joystick
-      m_Flags: 0
-    m_Flags: 0
-    m_Priority: 0
-  rightJoystickAction:
-    m_Name: Right Joystick
-    m_Type: 0
-    m_ExpectedControlType: 
-    m_Id: dc7e48d7-898f-497d-8ff6-8d41af98a7d6
-    m_Processors: 
-    m_Interactions: 
-    m_SingletonActionBindings:
-    - m_Name: 
-      m_Id: 371350e2-b10a-452a-b223-584338f1af19
-      m_Path: <XRController>{RightHand}/primary2DAxis
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Right Joystick
-      m_Flags: 0
-    m_Flags: 0
-    m_Priority: 0
---- !u!114 &-4510201160634604732
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3892407871355116576}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a74fa43d97ff462d872dc2aed0bd7bc0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::BumperTrap
-  pushSpeedHorizontal: 30
-  pushSpeedVertical: 100
-  bumperSound: {fileID: 0}
-  debugLogs: 0
-  bumpScale: 1.25
-  animationSpeed: 5
---- !u!114 &5226294317806381816
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3892407871355116576}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 56d8f0e93f8d4dab844e8029bad95b4b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::HoverableElement
---- !u!114 &4844983264859571191
+--- !u!114 &3791709000323751749
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -387,3 +80,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0bcf0c4f1fa84222b11b4b8b09e304a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LockableElement
+--- !u!114 &-5067210135890398177
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3892407871355116576}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56d8f0e93f8d4dab844e8029bad95b4b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HoverableElement

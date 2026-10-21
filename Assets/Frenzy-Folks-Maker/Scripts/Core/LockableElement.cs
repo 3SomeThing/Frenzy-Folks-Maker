@@ -134,7 +134,7 @@ public class LockableElement : MonoBehaviour
                 Debug.LogError($"{name} : AddComponent<AdvancedOutline> a renvoyé null", this);
                 return;
             }
-            _currentOutline.OutlineMode = AdvancedOutline.Mode.OutlineAll;
+            _currentOutline.OutlineMode = AdvancedOutline.Mode.OutlineVisible;
             _currentOutline.OutlineColor = Color.red;
         }
         else

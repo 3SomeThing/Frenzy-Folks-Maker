@@ -126,7 +126,7 @@ Rigidbody:
   m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 2
+  m_CollisionDetection: 0
 --- !u!65 &4200875024093129046
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -315,24 +315,6 @@ MonoBehaviour:
   m_LimitAngularVelocity: 0
   m_MaxLinearVelocityDelta: 10
   m_MaxAngularVelocityDelta: 20
-  leftJoystickAction:
-    m_Name: Left Joystick
-    m_Type: 0
-    m_ExpectedControlType: 
-    m_Id: 7e6800e4-2291-422c-bfc2-8d39bf0d4975
-    m_Processors: 
-    m_Interactions: 
-    m_SingletonActionBindings:
-    - m_Name: 
-      m_Id: c653fb69-21bf-46c2-abfb-f7c8713b1f6d
-      m_Path: <XRController>{LeftHand}/primary2DAxis
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Left Joystick
-      m_Flags: 0
-    m_Flags: 0
-    m_Priority: 0
   rightJoystickAction:
     m_Name: Right Joystick
     m_Type: 0
@@ -368,7 +350,6 @@ MonoBehaviour:
   pauseDuration: 2
   sweepAngle: 45
   windParticles: {fileID: 0}
-  windSound: {fileID: 0}
   windTrigger: {fileID: 0}
   debugLogs: 0
 --- !u!114 &6835623875935349534
