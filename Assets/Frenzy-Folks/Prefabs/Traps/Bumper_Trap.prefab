@@ -103,6 +103,12 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 6525973169812466031, guid: a65279c4fad7ab448813d9e259e9a3b9, type: 3}
       insertIndex: -1
       addedObject: {fileID: -4510201160634604732}
+    - targetCorrespondingSourceObject: {fileID: 6525973169812466031, guid: a65279c4fad7ab448813d9e259e9a3b9, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5226294317806381816}
+    - targetCorrespondingSourceObject: {fileID: 6525973169812466031, guid: a65279c4fad7ab448813d9e259e9a3b9, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4844983264859571191}
   m_SourcePrefab: {fileID: 100100000, guid: a65279c4fad7ab448813d9e259e9a3b9, type: 3}
 --- !u!1 &3892407871355116576 stripped
 GameObject:
@@ -357,3 +363,27 @@ MonoBehaviour:
   debugLogs: 0
   bumpScale: 1.25
   animationSpeed: 5
+--- !u!114 &5226294317806381816
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3892407871355116576}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56d8f0e93f8d4dab844e8029bad95b4b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HoverableElement
+--- !u!114 &4844983264859571191
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3892407871355116576}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0bcf0c4f1fa84222b11b4b8b09e304a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LockableElement

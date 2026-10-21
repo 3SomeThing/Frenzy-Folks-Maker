@@ -215,6 +215,8 @@ GameObject:
   - component: {fileID: -5544424905757042684}
   - component: {fileID: -7418323728451696784}
   - component: {fileID: -3743895546334849576}
+  - component: {fileID: 7901259451276246622}
+  - component: {fileID: 4104177626730038368}
   m_Layer: 0
   m_Name: Turret_Trap
   m_TagString: Turret
@@ -544,6 +546,31 @@ MonoBehaviour:
   m_SnapCollider: {fileID: -7418323728451696784}
   m_DisableSnapColliderWhenSelected: 1
   m_SnapToCollider: {fileID: 0}
+--- !u!114 &7901259451276246622
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5670505714895977808}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0bcf0c4f1fa84222b11b4b8b09e304a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LockableElement
+  rightTriggerAction: {fileID: 0}
+--- !u!114 &4104177626730038368
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5670505714895977808}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56d8f0e93f8d4dab844e8029bad95b4b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HoverableElement
 --- !u!1 &7130438860629149374
 GameObject:
   m_ObjectHideFlags: 0
@@ -628,7 +655,7 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -7511558181221131132, guid: f1f621a4e12b57d5790bd745c709d5eb, type: 3}
-      propertyPath: 'm_Materials.Array.data[0]'
+      propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 6922a499a3eec994c9b20588a6cfd3cd, type: 2}
     - target: {fileID: 919132149155446097, guid: f1f621a4e12b57d5790bd745c709d5eb, type: 3}
@@ -732,7 +759,7 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -7511558181221131132, guid: 96ada3c82ca07fe15b025182a7cb9abb, type: 3}
-      propertyPath: 'm_Materials.Array.data[0]'
+      propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 6922a499a3eec994c9b20588a6cfd3cd, type: 2}
     - target: {fileID: 919132149155446097, guid: 96ada3c82ca07fe15b025182a7cb9abb, type: 3}
