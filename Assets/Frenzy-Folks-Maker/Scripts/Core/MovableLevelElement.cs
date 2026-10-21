@@ -7,12 +7,6 @@ using UnityEngine.XR.Interaction.Toolkit.Transformers;
 public class MovableLevelElement : XRGrabInteractable
 {
     protected bool isBuilding;
-    
-    [SerializeField]
-    private InputAction leftJoystickAction = new(
-        "Left Joystick",
-        InputActionType.Value,
-        "<XRController>{LeftHand}/primary2DAxis");
 
     [SerializeField]
     private InputAction rightJoystickAction = new(
@@ -24,13 +18,11 @@ public class MovableLevelElement : XRGrabInteractable
     {
         base.OnEnable();
 
-        // leftJoystickAction.Enable();
         rightJoystickAction.Enable();
     }
 
     protected override void OnDisable()
     {
-        // leftJoystickAction.Disable();
         rightJoystickAction.Disable();
 
         base.OnDisable();
@@ -41,12 +33,11 @@ public class MovableLevelElement : XRGrabInteractable
         if (!isSelected)
             return;
 
-        Vector2 leftJoystick = leftJoystickAction.ReadValue<Vector2>();
         Vector2 rightJoystick = rightJoystickAction.ReadValue<Vector2>();
 
         // Both joysticks can rotate the selected object.
         float horizontalInput = Mathf.Clamp(
-            leftJoystick.x + rightJoystick.x,
+            rightJoystick.x,
             -1f,
             1f);
 

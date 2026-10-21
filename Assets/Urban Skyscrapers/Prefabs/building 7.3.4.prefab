@@ -287,11 +287,11 @@ MonoBehaviour:
   m_SmoothPosition: 0
   m_SmoothPositionAmount: 8
   m_TightenPosition: 0.1
-  m_TrackRotation: 1
+  m_TrackRotation: 0
   m_SmoothRotation: 0
   m_SmoothRotationAmount: 8
   m_TightenRotation: 0.1
-  m_TrackScale: 1
+  m_TrackScale: 0
   m_SmoothScale: 0
   m_SmoothScaleAmount: 8
   m_TightenScale: 0.1
@@ -325,24 +325,6 @@ MonoBehaviour:
   m_LimitAngularVelocity: 0
   m_MaxLinearVelocityDelta: 10
   m_MaxAngularVelocityDelta: 20
-  leftJoystickAction:
-    m_Name: Left Joystick
-    m_Type: 0
-    m_ExpectedControlType: 
-    m_Id: c3484458-9b0b-4e71-a47b-13406f16c44b
-    m_Processors: 
-    m_Interactions: 
-    m_SingletonActionBindings:
-    - m_Name: 
-      m_Id: dfe69f11-0951-453f-a253-4f8411176e89
-      m_Path: <XRController>{LeftHand}/primary2DAxis
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Left Joystick
-      m_Flags: 0
-    m_Flags: 0
-    m_Priority: 0
   rightJoystickAction:
     m_Name: Right Joystick
     m_Type: 0

@@ -8,7 +8,6 @@ public class FanTrap : MonoBehaviour
     [SerializeField, Min(0.1f)] public float pauseDuration = 2f;
     [SerializeField, Range(0f, 90f)] public float sweepAngle = 45f;
     [SerializeField] private ParticleSystem windParticles;
-    [SerializeField] private AudioSource windSound;
     [SerializeField] private CapsuleCollider windTrigger;
     [SerializeField] private bool debugLogs = false;
 
@@ -32,7 +31,6 @@ public class FanTrap : MonoBehaviour
         if (windParticles == null)
         {
             windParticles = GetComponentInChildren<ParticleSystem>(true);
-            windSound = GetComponentInChildren<AudioSource>(true);
         }
 
         if (windParticles == null)
@@ -185,12 +183,10 @@ public class FanTrap : MonoBehaviour
         if (status)
         {
             windParticles.Play(true);
-            windSound.Play();
         }
         else
         {
             windParticles.Stop(true);
-            windSound.Stop();
         }
     }
 }

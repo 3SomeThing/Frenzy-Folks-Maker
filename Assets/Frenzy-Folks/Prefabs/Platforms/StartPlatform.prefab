@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 6348000167782154622}
   - component: {fileID: -8326178253096914043}
   - component: {fileID: -2437064183451203978}
+  - component: {fileID: -8209823366272298962}
   m_Layer: 0
   m_Name: StartPlatform
   m_TagString: Untagged
@@ -167,13 +168,13 @@ MonoBehaviour:
   m_PermittedDisplacementAxes: -1
   m_ConstrainedAxisDisplacementMode: 1
   m_TwoHandedRotationMode: 1
-  m_AllowOneHandedScaling: 1
-  m_AllowTwoHandedScaling: 0
+  m_AllowOneHandedScaling: 0
+  m_AllowTwoHandedScaling: 1
   m_OneHandedScaleSpeed: 0.5
   m_ThresholdMoveRatioForScale: 0.05
   m_ClampScaling: 1
-  m_MinimumScaleRatio: 0.25
-  m_MaximumScaleRatio: 2
+  m_MinimumScaleRatio: 1
+  m_MaximumScaleRatio: 3
   m_ScaleMultiplier: 0.25
 --- !u!54 &-8326178253096914043
 Rigidbody:
@@ -219,7 +220,7 @@ MonoBehaviour:
   m_InteractionLayers:
     m_Bits: 1
   m_DistanceCalculationMode: 1
-  m_SelectMode: 0
+  m_SelectMode: 1
   m_FocusMode: 1
   m_CustomReticle: {fileID: 0}
   m_AllowGazeInteraction: 0
@@ -298,7 +299,7 @@ MonoBehaviour:
   m_SmoothRotation: 0
   m_SmoothRotationAmount: 8
   m_TightenRotation: 0.1
-  m_TrackScale: 0
+  m_TrackScale: 1
   m_SmoothScale: 0
   m_SmoothScaleAmount: 8
   m_TightenScale: 0.1
@@ -324,8 +325,10 @@ MonoBehaviour:
   m_ForceGravityOnDetach: 0
   m_UnparentTransformOnGrab: 0
   m_RetainTransformParent: 1
-  m_StartingSingleGrabTransformers: []
-  m_StartingMultipleGrabTransformers: []
+  m_StartingSingleGrabTransformers:
+  - {fileID: 6348000167782154622}
+  m_StartingMultipleGrabTransformers:
+  - {fileID: 6348000167782154622}
   m_AddDefaultGrabTransformers: 1
   m_FarAttachMode: 0
   m_LimitLinearVelocity: 0
@@ -368,6 +371,28 @@ MonoBehaviour:
       m_Flags: 0
     m_Flags: 0
     m_Priority: 0
+--- !u!114 &-8209823366272298962
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7713893165195602969}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6077e1b9c5d786469d7dc298cd6e954, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::StartPlatform
+  checkpointIndex: 0
+  checkpointSound: {fileID: 0}
+  checkpointParticules: {fileID: 0}
+  cylinder: {fileID: 0}
+  playSoundAndAnimation: 1
+  changeColor: 1
+  startZone: {fileID: 0}
+  countdownDuration: 5
+  countdownCanvasName: PlayerCanvas
+  countdownTextName: StartTimerText
 --- !u!1001 &5623595479725387689
 PrefabInstance:
   m_ObjectHideFlags: 0
