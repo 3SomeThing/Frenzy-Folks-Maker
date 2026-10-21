@@ -1,8 +1,7 @@
-// AdvancedOutlineMask.shader
-// A stencil mask shader that does not write color, only masking the object's geometry.
 Shader "Custom/Advanced Outline Mask" {
   Properties {
     [Enum(UnityEngine.Rendering.CompareFunction)] _ZTest("ZTest", Float) = 0
+    _StencilRef("Stencil Ref", Float) = 1
   }
 
   SubShader {
@@ -19,7 +18,8 @@ Shader "Custom/Advanced Outline Mask" {
       ColorMask 0
 
       Stencil {
-        Ref 1
+        Ref [_StencilRef]
+        Comp Always
         Pass Replace
       }
     }

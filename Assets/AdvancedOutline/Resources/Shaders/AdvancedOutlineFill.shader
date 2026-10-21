@@ -10,6 +10,8 @@ Shader "Custom/Advanced Outline Fill" {
     [Header(Dashed Pattern)]
     _DashScale("Dash Scale", Float) = 0
     _DashSpeed("Dash Speed", Float) = 0
+    
+    _StencilRef("Stencil Ref", Float) = 1
   }
 
   SubShader {
@@ -28,8 +30,8 @@ Shader "Custom/Advanced Outline Fill" {
       ColorMask RGB
 
       Stencil {
-        Ref 1
-        Comp NotEqual
+        Ref [_StencilRef]
+        Comp Greater
       }
 
       CGPROGRAM

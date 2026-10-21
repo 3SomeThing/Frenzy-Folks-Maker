@@ -32,6 +32,7 @@ namespace ITISKIRUHERE
         [SerializeField] Mode _outlineMode = Mode.OutlineVisible;
         [SerializeField] Color _outlineColor = Color.cyan;
         [SerializeField] [Range( 0f, 10f )] float _outlineWidth = 4f;
+        [SerializeField] [Range( 1, 200 )] int _stencilRef = 1;
 
         [Header("Aesthetic Effects")]
         [SerializeField] bool _pulseWidth;
@@ -68,7 +69,8 @@ namespace ITISKIRUHERE
         int _zTestId;
         int _dashScaleId;
         int _dashSpeedId;
-
+        int _stencilRefId;
+        
         List<Material> _tempMaterials = new List<Material>();
         Dictionary<Mesh, List<Vector3>> _runtimeBakeCache = new Dictionary<Mesh, List<Vector3>>();
         Dictionary<MeshFilter, Mesh> _clonedMeshes = new Dictionary<MeshFilter, Mesh>();
@@ -102,6 +104,16 @@ namespace ITISKIRUHERE
             set
             {
                 _outlineWidth = value;
+                _needsUpdate = true;
+            }
+        }
+        
+        public int StencilRef
+        {
+            get => _stencilRef;
+            set
+            {
+                _stencilRef = value;
                 _needsUpdate = true;
             }
         }
@@ -227,6 +239,7 @@ namespace ITISKIRUHERE
             _zTestId = Shader.PropertyToID( "_ZTest" );
             _dashScaleId = Shader.PropertyToID( "_DashScale" );
             _dashSpeedId = Shader.PropertyToID( "_DashSpeed" );
+            _stencilRefId = Shader.PropertyToID( "_StencilRef" );
         }
 
         void InitializeBakeCache()
@@ -498,6 +511,12 @@ namespace ITISKIRUHERE
                     break;
             }
 
+            _outlineMaskMaterial.SetFloat( _stencilRefId, _stencilRef );
+            _outlineFillMaterial.SetFloat( _stencilRefId, _stencilRef );
+
+            _outlineMaskMaterial.renderQueue = 3000 + 100 + _stencilRef;
+            _outlineFillMaterial.renderQueue = 3000 + 100 + 250 + _stencilRef;
+            
             // Write static properties via property block
             if ( _propertyBlock == null )
             {

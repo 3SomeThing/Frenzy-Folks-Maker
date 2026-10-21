@@ -64,7 +64,8 @@ public class HoverableElement : MonoBehaviour
             }
 
             if (_currentOutline == null) return;
-            _currentOutline.OutlineMode = AdvancedOutline.Mode.OutlineAll;
+            _currentOutline.OutlineMode = AdvancedOutline.Mode.OutlineVisible;
+            _currentOutline.StencilRef = 2;
         }
         else
         {
