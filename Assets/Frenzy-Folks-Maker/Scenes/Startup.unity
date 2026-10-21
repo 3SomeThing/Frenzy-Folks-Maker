@@ -606,6 +606,10 @@ PrefabInstance:
       propertyPath: message
       value: RETURN TO MAIN MENU
       objectReference: {fileID: 0}
+    - target: {fileID: 8138747720663420976, guid: 82752a3ac71bae04fbdd7ace886f8263, type: 3}
+      propertyPath: prefab
+      value: 
+      objectReference: {fileID: -2437064183451203978, guid: 07313812e77c0234182773e2d500c10b, type: 3}
     - target: {fileID: 8299415537223333707, guid: 82752a3ac71bae04fbdd7ace886f8263, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
