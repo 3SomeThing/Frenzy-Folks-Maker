@@ -8,6 +8,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2676016749580124269, guid: 80bc920729f878f43b98497f9905649f, type: 3}
+      propertyPath: cylinder
+      value: 
+      objectReference: {fileID: 1106439415229821739}
+    - target: {fileID: 2676016749580124269, guid: 80bc920729f878f43b98497f9905649f, type: 3}
+      propertyPath: checkpointSound
+      value: 
+      objectReference: {fileID: 858957814936438876}
+    - target: {fileID: 2676016749580124269, guid: 80bc920729f878f43b98497f9905649f, type: 3}
+      propertyPath: checkpointParticules
+      value: 
+      objectReference: {fileID: 16714488517004404}
     - target: {fileID: 8354544366753741266, guid: 80bc920729f878f43b98497f9905649f, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -63,6 +75,21 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 4320752723583455220}
   m_SourcePrefab: {fileID: 100100000, guid: 80bc920729f878f43b98497f9905649f, type: 3}
+--- !u!198 &16714488517004404 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 4428731434763775168, guid: 80bc920729f878f43b98497f9905649f, type: 3}
+  m_PrefabInstance: {fileID: 4417295092492787892}
+  m_PrefabAsset: {fileID: 0}
+--- !u!82 &858957814936438876 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 3938050357398005992, guid: 80bc920729f878f43b98497f9905649f, type: 3}
+  m_PrefabInstance: {fileID: 4417295092492787892}
+  m_PrefabAsset: {fileID: 0}
+--- !u!137 &1106439415229821739 stripped
+SkinnedMeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 3609563300999222175, guid: 80bc920729f878f43b98497f9905649f, type: 3}
+  m_PrefabInstance: {fileID: 4417295092492787892}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &5041778689137918940 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8699438780788548456, guid: 80bc920729f878f43b98497f9905649f, type: 3}
@@ -92,7 +119,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0bcf0c4f1fa84222b11b4b8b09e304a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LockableElement
-  lockSound: {fileID: 0}
-  unlockSound: {fileID: 0}
-  lockSoundVolume: 1
-  unlockSoundVolume: 1

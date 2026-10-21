@@ -358,6 +358,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: TooltipTex
       objectReference: {fileID: 0}
+    - target: {fileID: 467828483423230780, guid: 82752a3ac71bae04fbdd7ace886f8263, type: 3}
+      propertyPath: m_text
+      value: medium pink building
+      objectReference: {fileID: 0}
     - target: {fileID: 1044449579335050975, guid: 82752a3ac71bae04fbdd7ace886f8263, type: 3}
       propertyPath: m_Name
       value: ReurnButton
@@ -397,6 +401,10 @@ PrefabInstance:
     - target: {fileID: 2468404146219092376, guid: 82752a3ac71bae04fbdd7ace886f8263, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 2575624208809985365, guid: 82752a3ac71bae04fbdd7ace886f8263, type: 3}
+      propertyPath: m_text
+      value: big white building
       objectReference: {fileID: 0}
     - target: {fileID: 3059556496265207313, guid: 82752a3ac71bae04fbdd7ace886f8263, type: 3}
       propertyPath: m_SizeDelta.x
@@ -518,6 +526,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tooltip
       objectReference: {fileID: 0}
+    - target: {fileID: 5855330926138674631, guid: 82752a3ac71bae04fbdd7ace886f8263, type: 3}
+      propertyPath: m_text
+      value: small blue building
+      objectReference: {fileID: 0}
     - target: {fileID: 6313809369127715035, guid: 82752a3ac71bae04fbdd7ace886f8263, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0.5
@@ -606,6 +618,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: SettingsMenu, Assembly-CSharp
       objectReference: {fileID: 0}
+    - target: {fileID: 8656581293604893490, guid: 82752a3ac71bae04fbdd7ace886f8263, type: 3}
+      propertyPath: m_text
+      value: small white building
+      objectReference: {fileID: 0}
     - target: {fileID: 8888987391396533473, guid: 82752a3ac71bae04fbdd7ace886f8263, type: 3}
       propertyPath: m_Color.b
       value: 0.41568628
@@ -620,7 +636,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 4761267368723275426, guid: 82752a3ac71bae04fbdd7ace886f8263, type: 3}
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 893469416205809742, guid: 82752a3ac71bae04fbdd7ace886f8263, type: 3}
+    - {fileID: 7761452255059581063, guid: 82752a3ac71bae04fbdd7ace886f8263, type: 3}
+    - {fileID: 7322659767932419619, guid: 82752a3ac71bae04fbdd7ace886f8263, type: 3}
+    - {fileID: 6466232172098761446, guid: 82752a3ac71bae04fbdd7ace886f8263, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 1611026235901931096, guid: 82752a3ac71bae04fbdd7ace886f8263, type: 3}

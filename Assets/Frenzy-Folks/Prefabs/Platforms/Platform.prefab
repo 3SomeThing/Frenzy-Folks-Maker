@@ -2799,11 +2799,35 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8cda116d62554d0c8d313bfa55680985, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Platform
-  makePlatformFall: 0
+  makePlatformFall: 1
   delayBeforeFalling: 2
   delayBeforeRespawning: 3
   _crumbleSound: {fileID: 0}
   _crumbleParticles: {fileID: 0}
+--- !u!114 &8346110411866551925
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5424937700218060980}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56d8f0e93f8d4dab844e8029bad95b4b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HoverableElement
+--- !u!114 &892393415503709264
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5424937700218060980}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0bcf0c4f1fa84222b11b4b8b09e304a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LockableElement
 --- !u!1 &7943310789002126712
 GameObject:
   m_ObjectHideFlags: 0
@@ -2835,27 +2859,3 @@ Transform:
   m_Children: []
   m_Father: {fileID: 6553520164274308001}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8346110411866551925
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5424937700218060980}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 56d8f0e93f8d4dab844e8029bad95b4b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::HoverableElement
---- !u!114 &892393415503709264
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5424937700218060980}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0bcf0c4f1fa84222b11b4b8b09e304a4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::LockableElement

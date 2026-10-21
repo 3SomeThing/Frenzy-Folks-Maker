@@ -315,24 +315,6 @@ MonoBehaviour:
   m_LimitAngularVelocity: 0
   m_MaxLinearVelocityDelta: 10
   m_MaxAngularVelocityDelta: 20
-  leftJoystickAction:
-    m_Name: Left Joystick
-    m_Type: 0
-    m_ExpectedControlType: 
-    m_Id: 7e6800e4-2291-422c-bfc2-8d39bf0d4975
-    m_Processors: 
-    m_Interactions: 
-    m_SingletonActionBindings:
-    - m_Name: 
-      m_Id: c653fb69-21bf-46c2-abfb-f7c8713b1f6d
-      m_Path: <XRController>{LeftHand}/primary2DAxis
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Left Joystick
-      m_Flags: 0
-    m_Flags: 0
-    m_Priority: 0
   rightJoystickAction:
     m_Name: Right Joystick
     m_Type: 0
@@ -366,10 +348,9 @@ MonoBehaviour:
   pushSpeed: 100
   blowingDuration: 7
   pauseDuration: 2
-  sweepAngle: 45
-  windParticles: {fileID: 0}
-  windSound: {fileID: 0}
-  windTrigger: {fileID: 0}
+  sweepAngle: 0
+  windParticles: {fileID: 4907246502511961138}
+  windTrigger: {fileID: 6582669326407015013}
   debugLogs: 0
 --- !u!114 &6835623875935349534
 MonoBehaviour:
@@ -655,6 +636,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 18ad69c0c434a7b4babaaf57f515e746, type: 3}
+--- !u!198 &4907246502511961138 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 2638676172606062523, guid: 18ad69c0c434a7b4babaaf57f515e746, type: 3}
+  m_PrefabInstance: {fileID: 6954823697936440201}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &7894674348367852684 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 940121147475947269, guid: 18ad69c0c434a7b4babaaf57f515e746, type: 3}
