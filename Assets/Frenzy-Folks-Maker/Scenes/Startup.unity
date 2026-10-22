@@ -546,7 +546,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8135023674665499069, guid: 58d0a4ac86f2348deb02f3880c71378e, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8518324294302271954, guid: 58d0a4ac86f2348deb02f3880c71378e, type: 3}
       propertyPath: m_LocalPosition.x
@@ -998,14 +998,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: VR Setup
       objectReference: {fileID: 0}
-    - target: {fileID: 8299290160114961689, guid: 82752a3ac71bae04fbdd7ace886f8263, type: 3}
-      propertyPath: m_VerticalFit
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 8299290160114961689, guid: 82752a3ac71bae04fbdd7ace886f8263, type: 3}
-      propertyPath: m_HorizontalFit
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 4381594117470673443, guid: 82752a3ac71bae04fbdd7ace886f8263, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -1017,6 +1009,14 @@ PrefabInstance:
     - target: {fileID: 7976790562147517655, guid: 82752a3ac71bae04fbdd7ace886f8263, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8299290160114961689, guid: 82752a3ac71bae04fbdd7ace886f8263, type: 3}
+      propertyPath: m_VerticalFit
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8299290160114961689, guid: 82752a3ac71bae04fbdd7ace886f8263, type: 3}
+      propertyPath: m_HorizontalFit
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8724927290403545010, guid: 82752a3ac71bae04fbdd7ace886f8263, type: 3}
       propertyPath: m_Enabled
