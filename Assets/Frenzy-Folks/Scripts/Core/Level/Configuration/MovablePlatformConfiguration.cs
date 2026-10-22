@@ -1,23 +1,22 @@
 ﻿using System;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 [Serializable]
 public class MovablePlatformConfiguration : LevelElementConfiguration<MovablePlatform, MovablePlatformConfiguration>
 {
     [SerializeField] public float speed = 5F;
-    [SerializeField] public List<Vector3> pathPoints = new List<Vector3>();
+    [SerializeField] public Vector3 secondPoint;
 
     public override void Apply(MovablePlatform target)
     {
-        target.SetPathPoints(pathPoints);
+        target.Speed = speed;
+        target.SecondPoint = secondPoint;
     }
 
     public override MovablePlatformConfiguration From(MovablePlatform source)
     {
         speed = source.Speed;
-        pathPoints = source.GetPathPoints();
+        secondPoint = source.SecondPoint;
         return this;
     }
 }
