@@ -18,6 +18,20 @@ public class SettingsMenu : NestedMenus
             return;
         }
         
+        if(FindObjectsByType<StartPlatform>().Length != 1)
+        {
+            _tooltipUI.Show("There must be exactly\none Start Platform in the level.", name.transform as RectTransform);
+            _tooltipUI.HideAfterDelay(2f);
+            return;
+        }
+        
+        if(FindObjectsByType<EndPlatform>().Length != 1)
+        {
+            _tooltipUI.Show("There must be exactly\none End Platform in the level.", name.transform as RectTransform);
+            _tooltipUI.HideAfterDelay(2f);
+            return;
+        }
+
         TrySaveLevel(name.text);
     }
     
