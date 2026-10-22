@@ -1302,6 +1302,7 @@ GameObject:
   - component: {fileID: 1047445161}
   - component: {fileID: 1047445160}
   - component: {fileID: 1047445164}
+  - component: {fileID: 1047445165}
   m_Layer: 0
   m_Name: Floor
   m_TagString: Untagged
@@ -1485,6 +1486,18 @@ MonoBehaviour:
   m_Teleporting:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &1047445165
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1047445159}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0787c6d9aa56559479aa1abf8cf68dfc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SearchXRInteractionManager
 --- !u!1 &1139236908
 GameObject:
   m_ObjectHideFlags: 0
