@@ -2,7 +2,6 @@ using System;
 using System.Linq;
 using System.Reflection;
 using TMPro;
-using Unity.Tutorials.Editor;
 using UnityEngine;
 using UnityEngine.Animations;
 
@@ -64,7 +63,7 @@ public class EditObjectMenu : MonoBehaviour
                         inputFieldObject.labelText.text = fieldInfo.Name;
                         inputFieldObject.inputField.onValueChanged.AddListener((value) =>
                         {
-                            if (value.IsNullOrEmpty()) value = "0";
+                            if (string.IsNullOrEmpty(value)) value = "0";
                             
                             fieldInfo.SetValue(configuration, int.Parse(value));
                             configuration.Apply(selectedObject.gameObject);
