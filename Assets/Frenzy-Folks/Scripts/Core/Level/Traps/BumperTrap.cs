@@ -50,7 +50,6 @@ public class BumperTrap : MonoBehaviour
     private void Update()
     {
         bool isAnimating = spring.Tick(Time.deltaTime * animationSpeed);
-        transform.localScale = initialScale * spring.Get();
 
         if (isBumping && !isAnimating)
         {
