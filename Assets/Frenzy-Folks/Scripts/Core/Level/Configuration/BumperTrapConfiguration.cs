@@ -2,8 +2,8 @@
 
 public class BumperTrapConfiguration : LevelElementConfiguration<BumperTrap, BumperTrapConfiguration>
 {
-    [SerializeField, Min(0f)] private float pushSpeedHorizontal = 30f;
-    [SerializeField, Min(0f)] private float pushSpeedVertical = 3f;
+    [SerializeField, Range(0f, 100f)] private float pushSpeedHorizontal = 30f;
+    [SerializeField, Range(0f, 50f)] private float pushSpeedVertical = 3F;
     
     public override void Apply(BumperTrap target)
     {

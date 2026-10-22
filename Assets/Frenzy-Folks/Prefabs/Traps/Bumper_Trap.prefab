@@ -309,24 +309,6 @@ MonoBehaviour:
   m_LimitAngularVelocity: 0
   m_MaxLinearVelocityDelta: 10
   m_MaxAngularVelocityDelta: 20
-  leftJoystickAction:
-    m_Name: Left Joystick
-    m_Type: 0
-    m_ExpectedControlType: 
-    m_Id: 43451d77-7ba7-4c81-95d3-8e72096913e2
-    m_Processors: 
-    m_Interactions: 
-    m_SingletonActionBindings:
-    - m_Name: 
-      m_Id: f7d62bb2-7fed-4c64-b3c0-d5a4c88dce60
-      m_Path: <XRController>{LeftHand}/primary2DAxis
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Left Joystick
-      m_Flags: 0
-    m_Flags: 0
-    m_Priority: 0
   rightJoystickAction:
     m_Name: Right Joystick
     m_Type: 0
@@ -358,7 +340,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BumperTrap
   pushSpeedHorizontal: 30
-  pushSpeedVertical: 100
+  pushSpeedVertical: 3
   bumperSound: {fileID: 0}
   debugLogs: 0
   bumpScale: 1.25
