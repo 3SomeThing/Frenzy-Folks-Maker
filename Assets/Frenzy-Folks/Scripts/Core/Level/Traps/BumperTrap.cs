@@ -6,7 +6,7 @@ using SimpleUnitySprings;
 public class BumperTrap : MonoBehaviour
 {
     [SerializeField, Min(0f)] public float pushSpeedHorizontal = 30f;
-    [SerializeField, Min(0f)] public float pushSpeedVertical = 100f;
+    [SerializeField, Min(0f)] public float pushSpeedVertical = 3f;
     
     [SerializeField] private AudioSource bumperSound;
     [SerializeField] private bool debugLogs = false;

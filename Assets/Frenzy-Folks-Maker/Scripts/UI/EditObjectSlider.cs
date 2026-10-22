@@ -12,6 +12,4 @@ public class EditObjectSlider : MonoBehaviour
     {
         sliderValueText.text = slider.value.ToString("0.00");
     }
-    
-    onv
 }

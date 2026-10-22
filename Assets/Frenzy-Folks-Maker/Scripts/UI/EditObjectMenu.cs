@@ -15,6 +15,8 @@ public class EditObjectMenu : MonoBehaviour
     [SerializeField] private TextMeshProUGUI objectNameText;
     [SerializeField] private GameObject sliderPrefab;
     [SerializeField] private GameObject buttonPrefab; //TODO: Implement button prefab for non-numeric fields
+    [SerializeField] private GameObject togglePrefab;
+    [SerializeField] private GameObject inputFieldPrefab;
 
     [SerializeField] private GameObject contentWindow;
     [SerializeField] private GameObject confirmationWindow;
@@ -39,8 +41,6 @@ public class EditObjectMenu : MonoBehaviour
         
         BaseConfigurationSerializable configuration = FrenzyLevelConfiguration.ConfigurationDefinitions[objectName].Invoke();
         configuration.From(selectedObject.gameObject);
-        Debug.Log("Configuration initialized for " + objectName);
-        Debug.Log("Configuration values initialized for " + configuration.GetType().Name);
         foreach (FieldInfo fieldInfo in configuration.GetType().GetRuntimeFields())
         {
             RangeAttribute range = fieldInfo.GetCustomAttribute<RangeAttribute>();
@@ -50,19 +50,34 @@ public class EditObjectMenu : MonoBehaviour
                 // If type is field is a int create a text input field for it
                 if (fieldInfo.FieldType == typeof(int) &&  Mathf.Approximately(range.min, -1F))
                 {
-                    // Do not create a slider for int fields, instead create a text input field (not implemented yet)
+                    GameObject inputFieldPrefabInstance = Instantiate(inputFieldPrefab, contentWindow.transform);
+                    EditObjectInputField inputFieldObject = inputFieldPrefabInstance.GetComponent<EditObjectInputField>();
+                    inputFieldObject.inputField.text = fieldInfo.GetValue(configuration).ToString();
+                    inputFieldObject.inputField.characterValidation = TMP_InputField.CharacterValidation.Integer;
+                    inputFieldObject.inputField.contentType = TMP_InputField.ContentType.IntegerNumber;
+                    inputFieldObject.inputField.ForceLabelUpdate();
+                    inputFieldObject.inputField.onValidateInput = (text, index, ch) =>
+                        char.IsDigit(ch) ? ch : '\0';
+                    inputFieldObject.labelText.text = fieldInfo.Name;
+                    inputFieldObject.inputField.onValueChanged.AddListener((value) =>
+                    {
+                        fieldInfo.SetValue(configuration, int.Parse(value));
+                        configuration.Apply(selectedObject.gameObject);
+                    });
                     continue;
                 }
                 
-                if (fieldInfo.GetType() == typeof(bool) && Mathf.Approximately(range.min, -1F))
+                if (fieldInfo.FieldType == typeof(Boolean) && Mathf.Approximately(range.min, -1F))
                 {
-                    // Do not create a slider for boolean fields, instead create a toggle button (not implemented yet)
-                    continue;
-                }
-                
-                if(fieldInfo.GetType() == typeof(float) && Mathf.Approximately(range.min, -1F))
-                {
-                    // Do not create a slider for string fields, instead create a text input field (not implemented yet)
+                    GameObject toggleButtonPrefabInstance = Instantiate(togglePrefab, contentWindow.transform);
+                    EditObjectToggle toggleButtonObject = toggleButtonPrefabInstance.GetComponent<EditObjectToggle>();
+                    toggleButtonObject.toggle.isOn = (bool)fieldInfo.GetValue(configuration);
+                    toggleButtonObject.labelText.text = fieldInfo.Name;
+                    toggleButtonObject.toggle.onValueChanged.AddListener((value) =>
+                    {
+                        fieldInfo.SetValue(configuration, value);
+                        configuration.Apply(selectedObject.gameObject);
+                    });
                     continue;
                 }
                 
@@ -72,18 +87,30 @@ public class EditObjectMenu : MonoBehaviour
                 sliderObject.slider.maxValue = range.max;
                 sliderObject.slider.value = (float)fieldInfo.GetValue(configuration);
                 sliderObject.labelText.text = fieldInfo.Name;
+                sliderObject.slider.onValueChanged.AddListener((value) =>
+                {
+                    fieldInfo.SetValue(configuration, value);
+                    configuration.Apply(selectedObject.gameObject);
+                });
             }
         }
     }
-    
-    private void 
 
     private void OnDisable()
     {
         selectedObject = null;
         for (int i = contentWindow.transform.childCount - 1; i >= 0; i--)
         {
-            if(contentWindow.transform.GetChild(i).GetComponent<EditObjectSlider>() == null) continue;
+            if (contentWindow.transform.GetChild(i)
+                    .GetComponent<EditObjectSlider>() ==
+                null &&
+                contentWindow.transform.GetChild(i)
+                    .GetComponent<EditObjectToggle>() ==
+                null &&
+                contentWindow.transform.GetChild(i)
+                    .GetComponent<EditObjectInputField>() ==
+                null)
+                continue;
             Destroy(contentWindow.transform.GetChild(i).gameObject);
         }
     }
