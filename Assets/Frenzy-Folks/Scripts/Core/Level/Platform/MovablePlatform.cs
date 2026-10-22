@@ -34,6 +34,7 @@ public class MovablePlatform : NetworkBehaviour
     private Vector3 _lastObservedPos;
     private bool _hasObserved;
     private Vector3 _smoothVelocity;
+    public bool isInitializedFromJson;
 
     private void Awake()
     {

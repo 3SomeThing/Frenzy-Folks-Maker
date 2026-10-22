@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Unity.Netcode.Runtime::Unity.Netcode.NetworkObject
-  GlobalObjectIdHash: 0
+  GlobalObjectIdHash: 3016734258
   InScenePlacedSourceGlobalObjectIdHash: 0
   m_InScenePlacedDisabledByDefault: 0
   DeferredDespawnTick: 0
@@ -75,7 +75,7 @@ MonoBehaviour:
   ShowTopMostFoldoutHeaderGroup: 1
   levelPrefabs:
   - key: movable_platform
-    value: {fileID: 7454710114694620191, guid: ebf15ae7831ca6744b38b3b5ba992a8e, type: 3}
+    value: {fileID: 7454710114694620191, guid: a1c33e712a87aa24abdfe4e6945825b8, type: 3}
   - key: checkpoint
     value: {fileID: 5041778689137918940, guid: a1507cd1dac7b0f48965da7d1d87daf3, type: 3}
   - key: fan_trap

@@ -2,6 +2,7 @@ using System;
 using System.Linq;
 using System.Reflection;
 using TMPro;
+using Unity.Tutorials.Editor;
 using UnityEngine;
 using UnityEngine.Animations;
 
@@ -48,23 +49,43 @@ public class EditObjectMenu : MonoBehaviour
             if (range != null)
             {
                 // If type is field is a int create a text input field for it
-                if (fieldInfo.FieldType == typeof(int) &&  Mathf.Approximately(range.min, -1F))
+                if (fieldInfo.FieldType == typeof(int) )
                 {
-                    GameObject inputFieldPrefabInstance = Instantiate(inputFieldPrefab, contentWindow.transform);
-                    EditObjectInputField inputFieldObject = inputFieldPrefabInstance.GetComponent<EditObjectInputField>();
-                    inputFieldObject.inputField.text = fieldInfo.GetValue(configuration).ToString();
-                    inputFieldObject.inputField.characterValidation = TMP_InputField.CharacterValidation.Integer;
-                    inputFieldObject.inputField.contentType = TMP_InputField.ContentType.IntegerNumber;
-                    inputFieldObject.inputField.ForceLabelUpdate();
-                    inputFieldObject.inputField.onValidateInput = (text, index, ch) =>
-                        char.IsDigit(ch) ? ch : '\0';
-                    inputFieldObject.labelText.text = fieldInfo.Name;
-                    inputFieldObject.inputField.onValueChanged.AddListener((value) =>
+                    if (Mathf.Approximately(range.min, -1F))
                     {
-                        fieldInfo.SetValue(configuration, int.Parse(value));
-                        configuration.Apply(selectedObject.gameObject);
-                    });
+                        GameObject inputFieldPrefabInstance = Instantiate(inputFieldPrefab, contentWindow.transform);
+                        EditObjectInputField inputFieldObject = inputFieldPrefabInstance.GetComponent<EditObjectInputField>();
+                        inputFieldObject.inputField.text = fieldInfo.GetValue(configuration).ToString();
+                        inputFieldObject.inputField.characterValidation = TMP_InputField.CharacterValidation.Integer;
+                        inputFieldObject.inputField.contentType = TMP_InputField.ContentType.IntegerNumber;
+                        inputFieldObject.inputField.ForceLabelUpdate();
+                        inputFieldObject.inputField.onValidateInput = (text, index, ch) =>
+                            char.IsDigit(ch) ? ch : '\0';
+                        inputFieldObject.labelText.text = fieldInfo.Name;
+                        inputFieldObject.inputField.onValueChanged.AddListener((value) =>
+                        {
+                            if (value.IsNullOrEmpty()) value = "0";
+                            
+                            fieldInfo.SetValue(configuration, int.Parse(value));
+                            configuration.Apply(selectedObject.gameObject);
+                        });
+                    }
+                    else
+                    {
+                        GameObject sliderIntPrefabInstance = Instantiate(sliderPrefab, contentWindow.transform);
+                        EditObjectSlider sliderIntObject = sliderIntPrefabInstance.GetComponent<EditObjectSlider>();
+                        sliderIntObject.slider.minValue = range.min;
+                        sliderIntObject.slider.maxValue = range.max;
+                        sliderIntObject.slider.value = (int)fieldInfo.GetValue(configuration);
+                        sliderIntObject.labelText.text = fieldInfo.Name;
+                        sliderIntObject.slider.onValueChanged.AddListener((value) =>
+                        {
+                            fieldInfo.SetValue(configuration, (int)value);
+                            configuration.Apply(selectedObject.gameObject);
+                        });
+                    }
                     continue;
+                    
                 }
                 
                 if (fieldInfo.FieldType == typeof(Boolean) && Mathf.Approximately(range.min, -1F))

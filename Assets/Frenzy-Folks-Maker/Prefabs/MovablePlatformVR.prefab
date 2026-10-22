@@ -696,6 +696,7 @@ MonoBehaviour:
   pauseDuration: 1
   smoothMovement: 1
   smoothTime: 0.15
+  isInitializedFromJson: 0
 --- !u!114 &-6662933459563035389
 MonoBehaviour:
   m_ObjectHideFlags: 0

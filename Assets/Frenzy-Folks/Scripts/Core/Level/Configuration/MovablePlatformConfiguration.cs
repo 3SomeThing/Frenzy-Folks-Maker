@@ -11,6 +11,7 @@ public class MovablePlatformConfiguration : LevelElementConfiguration<MovablePla
     {
         target.Speed = speed;
         target.SecondPoint = secondPoint;
+        target.isInitializedFromJson = true;
     }
 
     public override MovablePlatformConfiguration From(MovablePlatform source)

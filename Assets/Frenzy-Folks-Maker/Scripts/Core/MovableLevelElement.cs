@@ -33,6 +33,14 @@ public class MovableLevelElement : XRGrabInteractable
 
     private void ToggleMenu(ActivateEventArgs arg0)
     {
+        ToggleEditMenu();
+    }
+
+    public void ToggleEditMenu()
+    {
+        if (EditObjectMenu.Instance == null)
+            return;
+
         if (EditObjectMenu.Instance.selectedObject == this)
         {
             HideEditMenu();
