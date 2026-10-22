@@ -2,7 +2,7 @@
 
 public class CheckpointConfiguration : LevelElementConfiguration<Checkpoint, CheckpointConfiguration>
 {
-    [SerializeField] private int checkpointIndex;
+    [SerializeField, Range(-1, -1)] private int checkpointIndex;
     
     public override void Apply(Checkpoint target)
     {

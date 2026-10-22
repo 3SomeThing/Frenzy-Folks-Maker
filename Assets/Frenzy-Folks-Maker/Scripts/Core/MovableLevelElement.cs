@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.XR.Interaction.Toolkit;
 using UnityEngine.XR.Interaction.Toolkit.Interactables;
 using UnityEngine.XR.Interaction.Toolkit.Transformers;
 
@@ -13,10 +14,12 @@ public class MovableLevelElement : XRGrabInteractable
         "Right Joystick",
         InputActionType.Value,
         "<XRController>{RightHand}/primary2DAxis");
-
+    
     protected override void OnEnable()
     {
         base.OnEnable();
+
+        activated.AddListener(ToggleMenu);
 
         rightJoystickAction.Enable();
     }
@@ -26,6 +29,33 @@ public class MovableLevelElement : XRGrabInteractable
         rightJoystickAction.Disable();
 
         base.OnDisable();
+    }
+
+    private void ToggleMenu(ActivateEventArgs arg0)
+    {
+        if (EditObjectMenu.Instance.selectedObject == this)
+        {
+            HideEditMenu();
+        }
+        else
+        {
+            ShowEditMenu();
+        }
+    }
+    
+    private void ShowEditMenu()
+    {
+        EditObjectMenu.Instance.gameObject.SetActive(false);
+        EditObjectMenu.Instance.selectedObject = this;
+        EditObjectMenu.Instance.gameObject.SetActive(true);
+    }
+
+    
+
+    private void HideEditMenu()
+    {
+        EditObjectMenu.Instance.selectedObject = null;
+        EditObjectMenu.Instance.gameObject.SetActive(false);
     }
 
     private void Update()

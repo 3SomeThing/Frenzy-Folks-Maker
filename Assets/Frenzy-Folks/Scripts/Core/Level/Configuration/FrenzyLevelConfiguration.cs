@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
+using System.Reflection;
 using Unity.Netcode;
 using UnityEngine;
 using Object = UnityEngine.Object;
@@ -10,7 +12,7 @@ public class FrenzyLevelConfiguration
 {
     private readonly FrenzyLevel _parentLevel;
 
-    private static readonly Dictionary<string, Func<BaseConfigurationSerializable>> ConfigurationDefinitions = new()
+    public static readonly Dictionary<string, Func<BaseConfigurationSerializable>> ConfigurationDefinitions = new()
     {
         {
             "movable_platform",
@@ -137,7 +139,14 @@ public class FrenzyLevelConfiguration
     {
         GameObject instance = Object.Instantiate(prefab, _parentLevel.transform, true);
         ((T)entry.value).Apply(instance);
-
+        
+        foreach (FieldInfo fieldInfo in entry.value.GetType().GetFields())
+        {
+            fieldInfo.CustomAttributes.ToList().ForEach(attribute =>
+            {
+                Debug.Log($"Field: {fieldInfo.Name}, Attribute: {attribute.AttributeType.Name}");
+            });
+        }
         // NetworkObject networkObject = instance.GetComponent<NetworkObject>();
         // networkObject.Spawn(true);
         // networkObject.TrySetParent(_parentLevel.transform);

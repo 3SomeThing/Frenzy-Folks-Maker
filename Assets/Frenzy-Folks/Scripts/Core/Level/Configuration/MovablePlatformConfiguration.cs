@@ -4,7 +4,7 @@ using UnityEngine;
 [Serializable]
 public class MovablePlatformConfiguration : LevelElementConfiguration<MovablePlatform, MovablePlatformConfiguration>
 {
-    [SerializeField] public float speed = 5F;
+    [SerializeField, Range(0f, 20f)] public float speed = 5F;
     [SerializeField] public Vector3 secondPoint;
 
     public override void Apply(MovablePlatform target)

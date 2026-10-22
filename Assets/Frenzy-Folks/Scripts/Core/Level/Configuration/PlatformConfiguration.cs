@@ -2,9 +2,9 @@
 
 public class PlatformConfiguration : LevelElementConfiguration<Platform, PlatformConfiguration>
 {
-    [SerializeField] private bool makePlatformFall = false;
-    [SerializeField] private float delayBeforeFalling = 2f;
-    [SerializeField] private float delayBeforeRespawning = 3f;
+    [SerializeField, Range(-1, -1)] private bool makePlatformFall = false;
+    [SerializeField, Range(0f, 10f)] private float delayBeforeFalling = 2f;
+    [SerializeField, Range(0f, 10f)] private float delayBeforeRespawning = 3f;
 
     public override void Apply(Platform target)
     {
