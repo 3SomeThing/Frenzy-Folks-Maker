@@ -48,9 +48,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
       objectReference: {fileID: 0}
+    - target: {fileID: 4425223974742408389, guid: 9353ad15aec2e714295e06299bd58630, type: 3}
+      propertyPath: m_AllowOneHandedScaling
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6804851737959725523, guid: 9353ad15aec2e714295e06299bd58630, type: 3}
       propertyPath: m_Name
       value: big_pink_building
+      objectReference: {fileID: 0}
+    - target: {fileID: 7128461274165317454, guid: 9353ad15aec2e714295e06299bd58630, type: 3}
+      propertyPath: m_ThrowOnDetach
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7128461274165317454, guid: 9353ad15aec2e714295e06299bd58630, type: 3}
+      propertyPath: m_UseDynamicAttach
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

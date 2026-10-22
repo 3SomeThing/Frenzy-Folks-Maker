@@ -1,17 +1,17 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using Unity.Netcode;
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 [Serializable]
 public class FrenzyLevelVR : FrenzyLevel
 {
     private void Awake()
     {
-        Debug.Log($"Loading level {VrGameState.Instance.SelectedLevelName}");
         LoadLevelConfiguration(VrGameState.Instance.SelectedLevelName);
+    }
+
+    private void Start()
+    {
+        PlayerPositionSpawner.SpawnAndRotatePlayerPosition(new Vector3(-3, 3, 0), Quaternion.Euler(0, 90, 0));
     }
 
     private void LoadLevelConfiguration(string levelName)

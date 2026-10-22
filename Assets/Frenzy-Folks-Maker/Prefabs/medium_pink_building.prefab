@@ -48,6 +48,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2593269127506404807, guid: e2cfe53e6ea328145a095997eec5e3d0, type: 3}
+      propertyPath: m_AllowOneHandedScaling
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5416521322570838606, guid: e2cfe53e6ea328145a095997eec5e3d0, type: 3}
+      propertyPath: m_ThrowOnDetach
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5416521322570838606, guid: e2cfe53e6ea328145a095997eec5e3d0, type: 3}
+      propertyPath: m_UseDynamicAttach
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5855568619085896221, guid: e2cfe53e6ea328145a095997eec5e3d0, type: 3}
       propertyPath: m_Name
       value: medium_pink_building

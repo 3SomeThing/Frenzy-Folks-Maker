@@ -1,12 +1,15 @@
-﻿using Unity.Netcode;
+﻿using System;
+using Unity.XR.CoreUtils;
 using UnityEngine;
 
 public class VrGameState : MonoBehaviour
 {
     public static VrGameState Instance;
-
-    public string SelectedLevelName;
-    public bool IsNewLevel;
+    
+    [SerializeField] public XROrigin xrOrigin;
+    [NonSerialized] public string SelectedLevelName;
+    [NonSerialized] public bool IsNewLevel;
+    
     public bool HasSelection => IsNewLevel || !string.IsNullOrEmpty(SelectedLevelName);
 
     public void ResetState()
@@ -24,5 +27,10 @@ public class VrGameState : MonoBehaviour
         }
 
         Instance = this;
+
+        if (!xrOrigin)
+        {
+            xrOrigin = GameObject.Find("VR Setup").GetComponent<XROrigin>();
+        }
     }
 }

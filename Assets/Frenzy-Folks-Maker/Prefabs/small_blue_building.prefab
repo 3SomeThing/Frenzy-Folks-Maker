@@ -12,6 +12,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: small_blue_building
       objectReference: {fileID: 0}
+    - target: {fileID: 1028178615067946925, guid: 19c36dee4f7c39249a6e15a4afcb28ff, type: 3}
+      propertyPath: m_ThrowOnDetach
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1028178615067946925, guid: 19c36dee4f7c39249a6e15a4afcb28ff, type: 3}
+      propertyPath: m_UseDynamicAttach
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2175175515244706040, guid: 19c36dee4f7c39249a6e15a4afcb28ff, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

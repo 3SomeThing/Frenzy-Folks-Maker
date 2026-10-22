@@ -8,9 +8,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2136735065149076191, guid: aeae88d7f4f51cf4c8b59b1a9c34e183, type: 3}
+      propertyPath: m_ThrowOnDetach
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2136735065149076191, guid: aeae88d7f4f51cf4c8b59b1a9c34e183, type: 3}
+      propertyPath: m_UseDynamicAttach
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2728791534965508322, guid: aeae88d7f4f51cf4c8b59b1a9c34e183, type: 3}
       propertyPath: m_Name
       value: small_white_building
+      objectReference: {fileID: 0}
+    - target: {fileID: 4195994005786378655, guid: aeae88d7f4f51cf4c8b59b1a9c34e183, type: 3}
+      propertyPath: m_AllowOneHandedScaling
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5446663022671203526, guid: aeae88d7f4f51cf4c8b59b1a9c34e183, type: 3}
       propertyPath: m_LocalPosition.x

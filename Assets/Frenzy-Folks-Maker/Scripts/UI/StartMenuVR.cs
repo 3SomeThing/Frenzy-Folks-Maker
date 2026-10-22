@@ -34,6 +34,8 @@ public class StartMenuVR : MonoBehaviour
 
         SetupNewLevelItem();
         BuildLevelList();
+        
+        PlayerPositionSpawner.SpawnAndRotatePlayerPosition(new Vector3(0, 0, 0), Quaternion.identity);
     }
     
     public void OnDestroy()
