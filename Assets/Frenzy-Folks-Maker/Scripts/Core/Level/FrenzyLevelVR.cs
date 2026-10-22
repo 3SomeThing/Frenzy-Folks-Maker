@@ -16,7 +16,15 @@ public class FrenzyLevelVR : FrenzyLevel
 
     private void LoadLevelConfiguration(string levelName)
     {
-        if(levelName == null) return;
+        if(levelName == null || VrGameState.Instance.IsNewLevel) return;
+
+        Transform parent = GameObject.Find("LevelEditor/Level").transform;
+        int childCount = parent.childCount;
+
+        for (int i = 0; i < childCount; i++)
+        {
+            Destroy(parent.GetChild(i).gameObject);
+        }
         
         FrenzyLevelConfiguration.Load(this, levelName + ".json" , levelPrefabs);
     }

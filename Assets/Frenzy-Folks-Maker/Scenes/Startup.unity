@@ -546,7 +546,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8135023674665499069, guid: 58d0a4ac86f2348deb02f3880c71378e, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8518324294302271954, guid: 58d0a4ac86f2348deb02f3880c71378e, type: 3}
       propertyPath: m_LocalPosition.x
@@ -998,6 +998,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: VR Setup
       objectReference: {fileID: 0}
+    - target: {fileID: 4225887399097580925, guid: 82752a3ac71bae04fbdd7ace886f8263, type: 3}
+      propertyPath: prefab
+      value: 
+      objectReference: {fileID: -8182747318662748897, guid: a1c33e712a87aa24abdfe4e6945825b8, type: 3}
     - target: {fileID: 4381594117470673443, guid: 82752a3ac71bae04fbdd7ace886f8263, type: 3}
       propertyPath: m_IsActive
       value: 1
