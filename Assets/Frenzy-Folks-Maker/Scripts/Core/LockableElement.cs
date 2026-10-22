@@ -1,5 +1,7 @@
-﻿using ITISKIRUHERE;
+﻿using System;
+using ITISKIRUHERE;
 using UnityEngine;
+using UnityEngine.XR.Interaction.Toolkit;
 using UnityEngine.XR.Interaction.Toolkit.Interactables;
 using UnityEngine.XR.Interaction.Toolkit.Interactors;
 
@@ -75,6 +77,14 @@ public class LockableElement : MonoBehaviour
         
         _lockRef = _nextLockRef;
         _nextLockRef = _nextLockRef % 99 + 1; // boucle de 1 à 99
+        
+        _grabInteractable.selectEntered.AddListener(OnSelectEntered);
+    }
+
+    public void OnDestroy()
+    {
+        if (_grabInteractable != null)
+            _grabInteractable.selectEntered.RemoveListener(OnSelectEntered);
     }
 
     public void SetLocked(bool isLocked)
@@ -141,5 +151,13 @@ public class LockableElement : MonoBehaviour
             _generatedUnlockClip = GenerateUnlockClip();
 
         _audioSource.PlayOneShot(_generatedUnlockClip, _unlockSoundVolume);
+    }
+    
+    private void OnSelectEntered(SelectEnterEventArgs args)
+    {
+        if (!_isLocked) return;
+
+        _grabInteractable.interactionManager?.CancelInteractableSelection(
+            (IXRSelectInteractable)_grabInteractable);
     }
 }
