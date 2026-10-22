@@ -1,8 +1,5 @@
-﻿using System.Collections.Generic;
-using ITISKIRUHERE;
+﻿using ITISKIRUHERE;
 using UnityEngine;
-using UnityEngine.InputSystem;
-using UnityEngine.XR.Interaction.Toolkit;
 using UnityEngine.XR.Interaction.Toolkit.Interactables;
 using UnityEngine.XR.Interaction.Toolkit.Interactors;
 
@@ -14,9 +11,6 @@ public class LockableElement : MonoBehaviour
     private static AudioClip _generatedUnlockClip;
     private float _lockSoundVolume = 1f;
     private float _unlockSoundVolume = 1f;
-    
-    //TODO: Make it in the menu
-    private InputAction _rightTriggerAction = CreateDefaultAction();
     
     private bool _isLocked;
     private XRGrabInteractable _grabInteractable;
@@ -30,64 +24,6 @@ public class LockableElement : MonoBehaviour
     private int _lockRef;
     
     private static XRBaseInteractor _rightInteractor;
-    private static readonly List<IXRInteractable> _validTargets = new List<IXRInteractable>();
-
-    private static bool IsRightHand(XRBaseInteractor interactor)
-    {
-        if (interactor.handedness == InteractorHandedness.Right) return true;
-
-        for (Transform t = interactor.transform; t != null; t = t.parent)
-        {
-            if (t.name.ToLowerInvariant().Contains("right")) return true;
-        }
-        return false;
-    }
-
-    private static XRBaseInteractor GetRightInteractor()
-    {
-        if (_rightInteractor != null) return _rightInteractor;
-
-        foreach (XRBaseInteractor interactor in Object.FindObjectsByType<XRBaseInteractor>(FindObjectsSortMode.None))
-        {
-            if (interactor is XRSocketInteractor || interactor is XRDirectInteractor) continue;
-            if (!IsRightHand(interactor)) continue;
-
-            _rightInteractor = interactor;
-            break;
-        }
-
-        if (_rightInteractor == null)
-            Debug.LogWarning("LockableElement : aucun interactor droit trouvé.");
-
-        return _rightInteractor;
-    }
-
-    private void OnTriggerPressed(InputAction.CallbackContext context)
-    {
-        foreach (IXRHoverInteractor hoverInteractor in _grabInteractable.interactorsHovering)
-        {
-            if (hoverInteractor is not XRBaseInteractor interactor) continue;
-            if (interactor is XRSocketInteractor || interactor is XRDirectInteractor) continue;
-            if (!IsRightHand(interactor)) continue;
-
-            _validTargets.Clear();
-            interactor.GetValidTargets(_validTargets);
-
-            if (_validTargets.Count > 0 && ReferenceEquals(_validTargets[0], _grabInteractable))
-                SetLocked(!IsLocked);
-
-            return;
-        }
-    }
-    
-    private static InputAction CreateDefaultAction()
-    {
-        var action = new InputAction("Lock", InputActionType.Button);
-        action.AddBinding("<XRController>{RightHand}/triggerPressed");
-        action.AddBinding("<XRController>{RightHand}/trigger");
-        action.AddBinding("<XRController>{RightHand}/{TriggerButton}");
-        return action;
-    }
 
     private static AudioClip GenerateLockClip()
     {
@@ -136,30 +72,9 @@ public class LockableElement : MonoBehaviour
         _audioSource.playOnAwake = false;
         _audioSource.spatialBlend = 1f;
         
-        _grabInteractable.selectEntered.AddListener(OnSelectEntered);
-        
-        _rightTriggerAction.Enable();
-        _rightTriggerAction.performed += OnTriggerPressed;
         
         _lockRef = _nextLockRef;
         _nextLockRef = _nextLockRef % 99 + 1; // boucle de 1 à 99
-    }
-
-    public void OnDestroy()
-    {
-        _rightTriggerAction.performed -= OnTriggerPressed;
-        _rightTriggerAction.Disable();
-
-        if (_grabInteractable != null)
-            _grabInteractable.selectEntered.RemoveListener(OnSelectEntered);
-    }
-
-    private void OnSelectEntered(SelectEnterEventArgs args)
-    {
-        if (!_isLocked) return;
-
-        _grabInteractable.interactionManager?.CancelInteractableSelection(
-            (IXRSelectInteractable)_grabInteractable);
     }
 
     public void SetLocked(bool isLocked)

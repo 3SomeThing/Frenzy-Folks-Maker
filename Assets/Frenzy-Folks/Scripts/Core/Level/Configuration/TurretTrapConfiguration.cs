@@ -2,9 +2,9 @@
 
 public class TurretTrapConfiguration : LevelElementConfiguration<TurretFSM, TurretTrapConfiguration>
 {
-    [SerializeField] 
+    [SerializeField, Range(0.1f, 10f)] 
     private float fireRate = 1f;
-    [SerializeField, Min(0f)]
+    [SerializeField, Range(1, 20)]
     private int targetingSpeed = 5;
     [SerializeField, Range(0f, 360f)] 
     private float detectionRadius = 10f;

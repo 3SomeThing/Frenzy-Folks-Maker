@@ -2,7 +2,7 @@
 
 public class TrampolineTrapConfiguration : LevelElementConfiguration<TrampolineTrap, TrampolineTrapConfiguration>
 {
-    [SerializeField, Min(0f)] private float pushSpeedVertical = 30f;
+    [SerializeField, Range(0f, 100f)] private float pushSpeedVertical = 30f;
     
     public override void Apply(TrampolineTrap trampoline)
     {
